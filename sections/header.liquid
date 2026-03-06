@@ -307,40 +307,51 @@
 
     {% comment %} 楼层 {% endcomment %}
     {% if section.blocks.size > 0 %}
-      <div class="floor-wrapper header-floor-wrapper">
-        <div class="floor-items">
-          {% for block in section.blocks %}
-            {% if block.type == 'floor' %}
-              {% if block.settings.floor_number != blank and block.settings.floor_name != blank %}
-                <div class="floor-item">
-                  <div class="floor-item-name" data-target-floor-number="{{ block.settings.floor_number }}">{{ block.settings.floor_name }}</div>
-                </div>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
+      <div class="floor-wrapper header-floor-wrapper js-floorHeaderWrapper">
+        <div class="floor-overlay"></div>
+        <div class="mobile-only">
+          <div class="hamburger-box-wrapper js-hamburgerBtn">
+            <span class="hamburger-box"></span>
+            <span class="hamburger-box"></span>
+            <span class="hamburger-box"></span>
+          </div>
         </div>
 
-        <style>
-          .header-floor-wrapper .floor-items {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 32px;
-          }
-          .header-floor-wrapper .floor-item .floor-item-name {
-            font-size: 14px;
-            color: #ffffffad;
-            text-decoration: none;
-            transition: color .3s ease;
-            cursor: pointer;
-          }
-          .header-floor-wrapper .floor-item .floor-item-name:hover {
-            color: #fff;
-          }
-        </style>
+        <div class="floor-wrapper-inner">
+          <div class="floor-items">
+            {% for block in section.blocks %}
+              {% if block.type == 'floor' %}
+                {% if block.settings.floor_number != blank and block.settings.floor_name != blank %}
+                  <div class="floor-item">
+                    <div class="floor-item-name" data-target-floor-number="{{ block.settings.floor_number }}">{{ block.settings.floor_name }}</div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
 
         <script>
           document.addEventListener('DOMContentLoaded', function() {
+            // 汉堡按钮点击事件
+            const hamburgerBtn = document.querySelector('.js-hamburgerBtn');
+            const floorHeaderWrapper = document.querySelector('.js-floorHeaderWrapper');
+            
+            if (hamburgerBtn && floorHeaderWrapper) {
+              hamburgerBtn.addEventListener('click', function() {
+                const isActive = floorHeaderWrapper.classList.contains('active');
+                
+                if (isActive) {
+                  floorHeaderWrapper.classList.remove('active');
+                  document.body.classList.remove('lock-body');
+                } else {
+                  floorHeaderWrapper.classList.add('active');
+                  document.body.classList.add('lock-body');
+                }
+              });
+            }
+            
+            // 楼层项点击事件
             const floorItems = document.querySelectorAll('.header-floor-wrapper .floor-item');
             floorItems.forEach(item => {
               item.addEventListener('click', function() {
@@ -355,15 +366,24 @@
                 const targetElement = document.querySelector(`[data-floor-number="${floorNumber}"]`);
                 if (!targetElement) return;
                 
-                // 计算目标位置（考虑固定头部的高度）
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                // 先收起菜单并取消锁定，以便正常滚动
+                if (floorHeaderWrapper) {
+                  floorHeaderWrapper.classList.remove('active');
+                  document.body.classList.remove('lock-body');
+                }
                 
-                // 平滑滚动到目标位置，持续时间为500毫秒（0.5秒）
-                window.scrollTo({
-                  top: targetPosition,
-                  behavior: 'smooth'
-                });
+                // 等待一小段时间确保样式已应用，再计算位置并滚动
+                setTimeout(function() {
+                  // 计算目标位置（考虑固定头部的高度）
+                  const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                  const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                  
+                  // 平滑滚动到目标位置，持续时间为500毫秒（0.5秒）
+                  window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                  });
+                }, 50);
               });
             });
           });
