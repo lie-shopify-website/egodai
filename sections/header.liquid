@@ -334,20 +334,42 @@
         <script>
           document.addEventListener('DOMContentLoaded', function() {
             // 汉堡按钮点击事件
-            const hamburgerBtn = document.querySelector('.js-hamburgerBtn');
             const floorHeaderWrapper = document.querySelector('.js-floorHeaderWrapper');
+            const hamburgerBtn = floorHeaderWrapper.querySelector('.js-hamburgerBtn');
+            const floorOverlay = floorHeaderWrapper.querySelector('.floor-overlay');
+            
+            // 关闭菜单的函数
+            function closeMenu() {
+              if (floorHeaderWrapper) {
+                floorHeaderWrapper.classList.remove('active');
+                document.body.classList.remove('lock-body');
+              }
+            }
+            
+            // 打开菜单的函数
+            function openMenu() {
+              if (floorHeaderWrapper) {
+                floorHeaderWrapper.classList.add('active');
+                document.body.classList.add('lock-body');
+              }
+            }
             
             if (hamburgerBtn && floorHeaderWrapper) {
               hamburgerBtn.addEventListener('click', function() {
                 const isActive = floorHeaderWrapper.classList.contains('active');
                 
                 if (isActive) {
-                  floorHeaderWrapper.classList.remove('active');
-                  document.body.classList.remove('lock-body');
+                  closeMenu();
                 } else {
-                  floorHeaderWrapper.classList.add('active');
-                  document.body.classList.add('lock-body');
+                  openMenu();
                 }
+              });
+            }
+            
+            // 点击 overlay 关闭菜单
+            if (floorOverlay && floorHeaderWrapper) {
+              floorOverlay.addEventListener('click', function() {
+                closeMenu();
               });
             }
             
@@ -365,6 +387,14 @@
                 // 在页面中查找对应的楼层模块（如果有多个相同楼层，只定位到第一个）
                 const targetElement = document.querySelector(`[data-floor-number="${floorNumber}"]`);
                 if (!targetElement) return;
+                
+                // 移除所有其他项的 open 类
+                floorItems.forEach(floorItem => {
+                  floorItem.classList.remove('open');
+                });
+                
+                // 给当前点击的项添加 open 类
+                item.classList.add('open');
                 
                 // 先收起菜单并取消锁定，以便正常滚动
                 if (floorHeaderWrapper) {
