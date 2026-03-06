@@ -1,0 +1,293 @@
+
+{% schema %}
+    {
+        "name": "图片视频轮播",
+        "settings": [
+            { "type": "header","content":"定位设置"},
+            { "type": "select", "id": "floor_number", "label": "楼层序号", "options": [
+                    { "value": "", "label": "不设置" },
+                    { "value": "1", "label": "1" },
+                    { "value": "2", "label": "2" },
+                    { "value": "3", "label": "3" },
+                    { "value": "4", "label": "4" },
+                    { "value": "5", "label": "5" },
+                    { "value": "6", "label": "6" },
+                    { "value": "7", "label": "7" },
+                    { "value": "8", "label": "8" },
+                    { "value": "9", "label": "9" },
+                    { "value": "10", "label": "10" },
+                    { "value": "11", "label": "11" },
+                    { "value": "12", "label": "12" },
+                    { "value": "13", "label": "13" },
+                    { "value": "14", "label": "14" },
+                    { "value": "15", "label": "15" },
+                    { "value": "16", "label": "16" },
+                    { "value": "17", "label": "17" },
+                    { "value": "18", "label": "18" },
+                    { "value": "19", "label": "19" },
+                    { "value": "20", "label": "20" }
+                ],
+                "default": ""
+            },
+            { "type": "header","content":"配置"},
+            { "type": "checkbox", "id": "autoplay", "label": "自动切换", "default": true },
+            { "type": "range", "id": "autoplay_interval", "label": "自动切换间隔时间", "min": 1, "max": 20, "step": 1, "unit": "秒", "default": 5 },
+            { "type": "number", "id": "height", "label": "高度", "default": 800 },
+            { "type": "number", "id": "height_mb", "label": "高度 (手机端)", "default": 667 },
+            { "type": "checkbox", "id": "remove_top_padding", "label": "移除上边距", "default": false },
+            { "type": "checkbox", "id": "remove_bottom_padding", "label": "移除下边距", "default": false },
+            { "type": "text", "id": "custom_class", "label": "自定义class" }
+        ],
+        "blocks": [
+            {
+                "type": "image",
+                "name": "Image",
+                "settings": [
+                    { "type": "header","content":"图片"},
+                    { "type": "image_picker", "id": "slide_image", "label": "图片" },
+                    { "type": "image_picker", "id": "slide_image_mb", "label": "图片 (手机端)" },
+                    { "type": "header","content":"视频"},
+                    { "type": "video", "id": "slide_video", "label": "视频" },
+                    { "type": "video", "id": "slide_video_mb", "label": "视频 (手机端)" },
+                    { "type": "paragraph","content":"当同时存在视频和图片时, 视频优先, 而图片则会当成视频的封面"},
+
+                    { "type": "checkbox", "id": "desktop_shadow", "label": "电脑端阴影", "default": true },
+                    { "type": "header","content":"标题"},
+                    { "type": "select", "id": "content_position", "options": [
+                            { "value": "left_top", "label": "左上" },
+                            { "value": "left_center", "label": "左中" },
+                            { "value": "left_bottom", "label": "左下" },
+                            { "value": "center_top", "label": "中上" },
+                            { "value": "center_center", "label": "中间" },
+                            { "value": "center_bottom", "label": "中下" },
+                            { "value": "right_top", "label": "右上" },
+                            { "value": "right_center", "label": "右中" },
+                            { "value": "right_bottom", "label": "右下" }
+                        ],
+                        "default": "left_bottom",
+                        "label": "内容位置"
+                    },
+                    { "type": "select", "id": "content_position_mb", "options": [
+                            { "value": "center_top", "label": "中上" },
+                            { "value": "center_center", "label": "中间" },
+                            { "value": "center_bottom", "label": "中下" }
+                        ],
+                        "default": "center_bottom",
+                        "label": "内容位置 (手机端)"
+                    },
+                    { "type": "textarea", "id": "slide_sub_title", "label": "小标题" },
+                    { "type": "textarea", "id": "slide_title", "label": "大标题" },
+                    { "type": "textarea", "id": "slide_info", "label": "内容" },
+
+                    { "type": "header","content":"按钮"},
+                    { "type": "textarea", "id": "slide_button_text", "label": "按钮文字" },
+                    { "type": "url", "id": "slide_button_url", "label": "按钮链接" },
+                    { "type": "color", "id": "slide_button_color", "label": "按钮颜色", "default": "#141414" },
+                    { "type": "color", "id": "slide_button_bg", "label": "按钮背景颜色", "default": "#FED100" }
+                ]
+            }
+        ],
+
+        "presets": [
+            {
+                "name": "图片视频轮播",
+                "category": "custom"
+            }
+        ]
+    }
+{% endschema %}
+
+{{ 'cm-image-video-carousel.css' | asset_url | stylesheet_tag }}
+<style>
+[data-section-id="{{ section.id }}"] {
+    --slide-height:{{ section.settings.height }}px;
+    --slide-height-pad:{{ section.settings.height | times: 0.8 | ceil }}px;
+    --slide-height-mb:{{ section.settings.height_mb }}px;
+}
+</style>
+<div class="hm-slideshow {{ section.settings.custom_class }} {% if section.settings.remove_top_padding %}remove-top-space{% endif %} {% if section.settings.remove_bottom_padding %}remove-bottom-space{% endif %}" data-section-id="{{ section.id }}" {% if section.settings.floor_number != blank %}data-floor-number="{{ section.settings.floor_number }}"{% endif %}>
+    <div class="layout-container">
+        <div class="splide-box">
+            <div class="splide main-splide js-mainSplide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        {% for block in section.blocks %}
+                            <div class="splide__slide {% if block.settings.desktop_shadow %}desktop-shadow{% endif %}">
+                                <div class="slide-image">
+                                    {% if block.settings.slide_button_url != blank %} <a href="{{ block.settings.slide_button_url }}"></a> {% endif %}
+                                    
+                                    {% if block.settings.slide_video != blank and block.settings.slide_video_mb != blank  %}
+                                        {% comment %} 视频 {% endcomment %}
+                                        {% liquid
+                                          assign video_url = block.settings.slide_video.sources[0].url
+                                          assign video_mb_url = block.settings.slide_video_mb.sources[0].url
+                                          assign video_poster = block.settings.slide_video.previewImage.url
+                                          assign video_mb_poster = block.settings.slide_video_mb.previewImage.url
+
+                                          if block.settings.slide_video.sources[1].url != blank
+                                            assign video_url = block.settings.slide_video.sources[1].url
+                                          endif
+                                          if block.settings.slide_video_mb.sources[1].url != blank
+                                            assign video_mb_url = block.settings.slide_video_mb.sources[1].url
+                                          endif
+                                        %}
+                                        <mf-video 
+                                            class="hm-slideshow-video"
+                                            autoplay 
+                                            muted 
+                                            playsinline
+                                            webkit-playsinline
+                                            loop
+                                            preload="metadata"
+                                        >
+                                            <source src="{{ video_url }}" type="video/mp4" media="(min-width: 1280px)" poster="{{ video_poster }}">
+                                            <source src="{{ video_url }}" type="video/mp4" media="(min-width: 768px)" poster="{{ video_mb_poster }}">
+                                            <source src="{{ video_mb_url }}" type="video/mp4" poster="{{ video_poster }}">
+                                        </mf-video>
+                                    {% else %}
+                                        {% comment %} 图片 {% endcomment %}
+                                        {% liquid
+                                            assign pc_src = block.settings.slide_image | image_url: width: block.settings.image.width
+                                            assign pad_src = block.settings.slide_image | image_url: width: block.settings.image.width
+                                            assign m_src = block.settings.slide_image_mb | image_url: width: 767
+                                        %}
+                                        {% render 'resp-img'
+                                            pc_src: pc_src,
+                                            pad_src: pad_src,
+                                            m_src: m_src,
+                                            lazy: true, 
+                                            class_name: 'resp-img-class'
+                                        %}
+                                    {% endif %}
+                                </div>
+
+                                <div class="content">
+                                    <div class="content-inner" data-content-position="{{ block.settings.content_position }}" data-content-position-mb="{{ block.settings.content_position_mb }}">
+                                        <div class="content-container">
+                                        {% if block.settings.slide_sub_title != blank %} <div class="slide_sub_title">{{ block.settings.slide_sub_title }}</div> {% endif %}
+                                        {% if block.settings.slide_title != blank %} <div class="slide_title"><p class="slide_title-inner">{{ block.settings.slide_title }}</p></div> {% endif %}
+                                        {% if block.settings.slide_info != blank %} <div class="slide_info">{{ block.settings.slide_info }}</div> {% endif %}
+                                        
+                                        {% if block.settings.slide_button_text != blank and block.settings.slide_button_url != blank %}
+                                            <div class="slide_button" style="--slide-button-color:{{ block.settings.slide_button_color }};--slide-button-bg:{{ block.settings.slide_button_bg }};">
+                                                <a href="{{ block.settings.slide_button_url }}" class="mf-btn"><span>{{ block.settings.slide_button_text }}</span></a>
+                                            </div> 
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+
+                {% if section.blocks.size > 1 %}
+                <div class="splide__arrows splide__arrows--ltr">
+                    {% if section.settings.autoplay %}
+                    <div class="load-progress">
+                        <div class="splide__toggle-wrapper">
+                            <button class="splide__toggle" type="button">
+                                <svg class="progress-ring" viewBox="0 0 40 40">
+                                    <circle class="progress-ring__bg" cx="20" cy="20" r="18" />
+                                    <circle class="progress-ring__value" cx="20" cy="20" r="18" />
+                                </svg>
+            
+                                <svg class="splide__toggle__play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="9 6 9 18 18 12" fill="#fff" />
+                                </svg>
+                                <svg class="splide__toggle__pause" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="4" height="20" fill="#fff" x="4" />
+                                    <rect width="4" height="20" fill="#fff" x="16" stroke-width="1" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <button
+                      class="splide__arrow splide__arrow--prev"
+                      type="button"
+                      aria-label="Previous slide"
+                    >
+                        <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.83333 17.7272L1.5 9.39388L9.83333 1.06055" stroke="black" stroke-width="3" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button
+                      class="splide__arrow splide__arrow--next"
+                      type="button" 
+                      aria-label="Next slide" 
+                    >
+                        <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.06022 1.06087L9.39356 9.39421L1.06022 17.7275" stroke="black" stroke-width="3" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                  </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    ;(function() {
+        const oSection = document.querySelector('[data-section-id="{{ section.id }}"]');
+
+        {% comment %} 轮播 {% endcomment %}
+        function initSplide() {
+            const mainSplide = oSection.querySelector('.js-mainSplide');
+
+            var mainSplider = new Splide(mainSplide, {
+                arrows: {% if section.blocks.size > 1 %}true{% else %}false{% endif %},
+                {% if section.settings.autoplay %} 
+                type:"loop",
+                autoplay: true,
+                interval: {{ section.settings.autoplay_interval | times: 1000 }},
+                {% endif %}
+                pagination: true,
+                resetProgress: false,
+            });
+
+            {% comment %} SVG 圆环进度条逻辑 {% endcomment %}
+            const progressCircle = oSection.querySelector('.progress-ring__value');
+            const radius = 18;
+            const circumference = 2 * Math.PI * radius;
+
+            if (progressCircle) {
+                progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+                progressCircle.style.strokeDashoffset = `${circumference}`;
+
+                {% comment %} rate 范围 0 ~ 1 {% endcomment %}
+                mainSplider.on('autoplay:playing', (rate) => {
+                    if (rate === 1) {
+                        mainSplider.Components.Autoplay.pause(false);
+                        return;
+                    }
+                    const offset = circumference * (1 - rate);
+                    progressCircle.style.strokeDashoffset = `${offset}`;
+                });
+            }
+
+            {% comment %} 在每一帧之间增加一个“停顿时间”，再重新开始自动播放进度 {% endcomment %}
+            const AUTOPLAY_GAP = 800;
+            mainSplider.on('moved', () => {
+                const Autoplay = mainSplider.Components.Autoplay;
+                if (Autoplay) {
+                    Autoplay.pause(false);
+
+                    setTimeout(() => {
+                        Autoplay.play();
+                    }, AUTOPLAY_GAP);
+                }
+            });
+
+
+            {% comment %} 挂载动作放到最后 {% endcomment %}
+            mainSplider.mount();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            initSplide(); 
+        });
+
+    })();
+</script>

@@ -1,0 +1,273 @@
+
+{% schema %}
+    {
+        "name": "单视频",
+        "settings": [
+            { "type": "header","content":"定位设置"},
+            { "type": "select", "id": "floor_number", "label": "楼层序号", "options": [
+                    { "value": "", "label": "不设置" },
+                    { "value": "1", "label": "1" },
+                    { "value": "2", "label": "2" },
+                    { "value": "3", "label": "3" },
+                    { "value": "4", "label": "4" },
+                    { "value": "5", "label": "5" },
+                    { "value": "6", "label": "6" },
+                    { "value": "7", "label": "7" },
+                    { "value": "8", "label": "8" },
+                    { "value": "9", "label": "9" },
+                    { "value": "10", "label": "10" },
+                    { "value": "11", "label": "11" },
+                    { "value": "12", "label": "12" },
+                    { "value": "13", "label": "13" },
+                    { "value": "14", "label": "14" },
+                    { "value": "15", "label": "15" },
+                    { "value": "16", "label": "16" },
+                    { "value": "17", "label": "17" },
+                    { "value": "18", "label": "18" },
+                    { "value": "19", "label": "19" },
+                    { "value": "20", "label": "20" }
+                ],
+                "default": ""
+            },
+            { "type": "header","content":"标题"},
+            { "type": "textarea", "id": "section_title", "label": "大标题" },
+            { "type": "textarea", "id": "section_info", "label": "内容" },
+
+            { "type": "header","content":"视频"},
+            { "type": "video", "id": "video_mobile", "label": "手机端视频" },
+            { "type": "video", "id": "video_desktop", "label": "电脑端视频" },
+            { "type": "video", "id": "video", "label": "通用视频（未单独设置手机/电脑时使用）" },
+            { "type": "image_picker", "id": "poster_image", "label": "封面图（可选）" },
+            { "type": "select", "id": "ratio_mobile", "label": "手机端比例", "options": [
+                    { "value": "16/9", "label": "16:9" },
+                    { "value": "1/1", "label": "1:1" },
+                    { "value": "4/3", "label": "4:3" },
+                    { "value": "3/4", "label": "3:4" },
+                    { "value": "3/2", "label": "3:2" },
+                    { "value": "2/1", "label": "2:1" },
+                    { "value": "21/9", "label": "21:9" }
+                ],
+                "default": "16/9"
+            },
+            { "type": "select", "id": "ratio_desktop", "label": "电脑端比例", "options": [
+                    { "value": "16/9", "label": "16:9" },
+                    { "value": "1/1", "label": "1:1" },
+                    { "value": "4/3", "label": "4:3" },
+                    { "value": "3/4", "label": "3:4" },
+                    { "value": "3/2", "label": "3:2" },
+                    { "value": "2/1", "label": "2:1" },
+                    { "value": "21/9", "label": "21:9" }
+                ],
+                "default": "16/9"
+            },
+            { "type": "color", "id": "overlay_color", "label": "遮罩颜色", "default": "#000000" },
+            { "type": "range", "id": "overlay_opacity", "min": 0, "max": 1, "step": 0.1, "default": 0, "label": "遮罩透明度" },
+            { "type": "header","content":"内容与定位"},
+            { "type": "select", "id": "content_position", "options": [
+                    { "value": "left_top", "label": "左上" },
+                    { "value": "left_center", "label": "左中" },
+                    { "value": "left_bottom", "label": "左下" },
+                    { "value": "center_top", "label": "中上" },
+                    { "value": "center_center", "label": "中间" },
+                    { "value": "center_bottom", "label": "中下" },
+                    { "value": "right_top", "label": "右上" },
+                    { "value": "right_center", "label": "右中" },
+                    { "value": "right_bottom", "label": "右下" }
+                ],
+                "default": "left_bottom",
+                "label": "文字位置"
+            },
+            { "type": "select", "id": "content_position_mb", "options": [
+                    { "value": "center_top", "label": "中上" },
+                    { "value": "center_center", "label": "中间" },
+                    { "value": "center_bottom", "label": "中下" }
+                ],
+                "default": "center_bottom",
+                "label": "文字位置 (手机端)"
+            },
+            { "type": "color", "id": "text_color", "label": "文字颜色", "default": "#ffffff" },
+            { "type": "textarea", "id": "subheading", "label": "小标题" },
+            { "type": "textarea", "id": "heading", "label": "大标题" },
+            { "type": "textarea", "id": "content", "label": "内容" },
+            { "type": "header","content":"按钮"},
+            { "type": "textarea", "id": "button_label", "label": "按钮文字" },
+            { "type": "url", "id": "button_link", "label": "按钮链接" },
+            { "type": "color", "id": "button_bg_color", "label": "按钮背景色", "default": "#FED100" },
+            { "type": "color", "id": "button_text_color", "label": "按钮文字色", "default": "#141414" },
+            { "type": "checkbox", "id": "remove_top_padding", "label": "移除上边距", "default": false },
+            { "type": "checkbox", "id": "remove_bottom_padding", "label": "移除下边距", "default": false },
+            { "type": "select", "id": "container_width", "label": "容器宽度", "options": [
+                    { "value": "full_width", "label": "全宽" },
+                    { "value": "1440", "label": "1440px" }
+                ],
+                "default": "1440"
+            },
+            { "type": "color", "id": "background_color", "label": "背景色", "default": "#000000" },
+            { "type": "text", "id": "custom_class", "label": "自定义class" }
+        ],
+        "presets": [
+            {
+                "name": "单视频",
+                "category": "custom"
+            }
+        ]
+    }
+{% endschema %}
+
+
+
+{{ 'cm-one-video.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign ratio_mobile = section.settings.ratio_mobile
+  assign ratio_desktop = section.settings.ratio_desktop
+  assign position = section.settings.content_position
+  assign position_mb = section.settings.content_position_mb | default: position
+-%}
+
+{% style %}
+  [data-section-id="{{ section.id }}"] {
+    --cm-one-video-text: {{ section.settings.text_color }};
+    --cm-one-video-button-bg: {{ section.settings.button_bg_color }};
+    --cm-one-video-button-text: {{ section.settings.button_text_color }};
+    background-color: {{ section.settings.background_color }};
+  }
+
+  {% if section.settings.container_width == '1440' %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  {% else %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 100%;
+    }
+  {% endif %}
+
+  [data-section-id="{{ section.id }}"] .cm-one-video__media--mobile {
+    aspect-ratio: {{ ratio_mobile }};
+  }
+  @media screen and (min-width: 750px) {
+    [data-section-id="{{ section.id }}"] .cm-one-video__media--desktop {
+      aspect-ratio: {{ ratio_desktop }};
+    }
+  }
+
+  [data-section-id="{{ section.id }}"] .cm-one-video__overlay {
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity }};
+  }
+{% endstyle %}
+
+<div class="cm-one-video {{ section.settings.custom_class }} {% if section.settings.remove_top_padding %}cm-remove-top-space{% endif %} {% if section.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" data-section-id="{{ section.id }}" {% if section.settings.floor_number != blank %}data-floor-number="{{ section.settings.floor_number }}"{% endif %}>
+  <div class="layout-container">
+    {% if section.settings.section_title != blank or section.settings.section_info != blank %}
+      <div class="heading-box">
+          {% if section.settings.section_title != blank %}
+              <div class="section-title"><h2 class="slide_title-inner">{{ section.settings.section_title }}</h2></div>
+          {% endif %}
+          {% if section.settings.section_info != blank %}
+              <div class="section-info"><p>{{ section.settings.section_info }}</p></div>
+          {% endif %}
+      </div>
+    {% endif %}
+    
+    <div class="cm-one-video__wrap">
+      <div class="cm-one-video__media cm-one-video__media--mobile cm-one-video__media--desktop">
+        {%- if section.settings.button_link != blank -%}
+          <a href="{{ section.settings.button_link }}"></a>
+        {%- endif -%}
+        
+        {%- liquid
+          assign video_mobile = section.settings.video_mobile
+          assign video_desktop = section.settings.video_desktop
+          if video_mobile == blank
+            assign video_mobile = section.settings.video
+          endif
+          if video_desktop == blank
+            assign video_desktop = section.settings.video
+          endif
+          if video_mobile == blank and video_desktop != blank
+            assign video_mobile = video_desktop
+          endif
+        -%}
+        
+        {%- if video_mobile != blank or video_desktop != blank -%}
+          {% comment %} 视频 {% endcomment %}
+          {% liquid
+            if video_desktop != blank
+              assign video_url = video_desktop.sources[0].url
+              assign video_poster = video_desktop.previewImage.url
+              if video_desktop.sources[1].url != blank
+                assign video_url = video_desktop.sources[1].url
+              endif
+            else
+              assign video_url = video_mobile.sources[0].url
+              assign video_poster = video_mobile.previewImage.url
+              if video_mobile.sources[1].url != blank
+                assign video_url = video_mobile.sources[1].url
+              endif
+            endif
+            
+            if video_mobile != blank
+              assign video_mb_url = video_mobile.sources[0].url
+              assign video_mb_poster = video_mobile.previewImage.url
+              if video_mobile.sources[1].url != blank
+                assign video_mb_url = video_mobile.sources[1].url
+              endif
+            else
+              assign video_mb_url = video_url
+              assign video_mb_poster = video_poster
+            endif
+            
+            if section.settings.poster_image != blank
+              assign poster_url = section.settings.poster_image | image_url: width: 1920
+            else
+              assign poster_url = video_poster
+            endif
+          %}
+          <mf-video 
+            class="cm-one-video__video"
+            autoplay 
+            muted 
+            playsinline
+            webkit-playsinline
+            loop
+            preload="metadata"
+          >
+            <source src="{{ video_url }}" type="video/mp4" media="(min-width: 1280px)" poster="{{ poster_url }}">
+            <source src="{{ video_url }}" type="video/mp4" media="(min-width: 768px)" poster="{{ poster_url }}">
+            <source src="{{ video_mb_url }}" type="video/mp4" poster="{{ poster_url }}">
+          </mf-video>
+        {%- else -%}
+          <div class="cm-one-video__placeholder">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+        <span class="cm-one-video__overlay" aria-hidden="true"></span>
+      </div>
+
+      <div class="cm-one-video-content">
+        <div class="cm-one-video-content-inner" data-content-position="{{ position }}" data-content-position-mb="{{ position_mb }}">
+          <div class="cm-one-video-content-container">
+            {%- if section.settings.subheading != blank -%}
+              <div class="cm-slide-sub-title">{{ section.settings.subheading }}</div>
+            {%- endif -%}
+            {%- if section.settings.heading != blank -%}
+              <div class="cm-slide-title"><p class="cm-slide-title-inner">{{ section.settings.heading }}</p></div>
+            {%- endif -%}
+            {%- if section.settings.content != blank -%}
+              <div class="cm-slide-info">{{ section.settings.content }}</div>
+            {%- endif -%}
+            
+            {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+              <div class="cm-slide-button" style="--cm-slide-button-color:{{ section.settings.button_text_color }};--cm-slide-button-bg:{{ section.settings.button_bg_color }};">
+                <a href="{{ section.settings.button_link }}" class="mf-btn"><span>{{ section.settings.button_label }}</span></a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

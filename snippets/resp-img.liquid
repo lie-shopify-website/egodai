@@ -1,0 +1,45 @@
+{% comment %}
+  渲染一个用于懒加载的响应式图片
+
+  参数:
+  - pc_src: 桌面端图片 必填
+  - pad_src: 平板端图片 可选 默认与 pc_src 相同
+  - m_src: 移动端图片 可选 默认与 pc_src 相同
+  - lazy: 是否懒加载 可选 默认 true
+  - class_name: 图片容器的样式类名 可选 默认 ''
+
+  使用示例:
+  {% liquid
+    assign pc_src = section.settings.pc_src | image_url: width: 2560
+    assign pad_src = section.settings.pad_src | image_url: width: 1536
+    assign m_src = section.settings.m_src | image_url: width: 1125
+  %}
+  {% render 'resp-img'
+    pc_src: section.settings.pc_src,
+    pad_src: section.settings.pad_src,
+    m_src: section.settings.m_src,
+    lazy: true,
+    class_name: 'resp-img-class'
+  %}
+{% endcomment %}
+
+{% liquid
+  assign lazy = lazy | default: true
+  assign class_name = class_name | default: ''
+  assign pad_src = pad_src | default: pc_src
+  assign m_src = m_src | default: pc_src
+%}
+
+{%- if pc_src != blank -%}
+    <picture class="resp-img {{ class_name }}">
+    {%- if lazy -%}
+        <source data-srcset="{{ pc_src }}" media="(min-width: 1280px)">
+        <source data-srcset="{{ pad_src }}" media="(min-width: 768px)">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lzsrc="{{ m_src }}" width="100%" height="auto" class="fit-cover js-lazy">
+    {%- else -%}
+        <source srcset="{{ pc_src }}" media="(min-width: 1280px)">
+        <source srcset="{{ pad_src }}" media="(min-width: 768px)">
+        <img src="{{ m_src }}" width="100%" height="auto" class="fit-cover">
+    {%- endif -%}
+    </picture>
+{%- endif -%}
