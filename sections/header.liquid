@@ -306,6 +306,70 @@
 
 
     {% comment %} 楼层 {% endcomment %}
+    {% if section.blocks.size > 0 %}
+      <div class="floor-wrapper header-floor-wrapper">
+        <div class="floor-items">
+          {% for block in section.blocks %}
+            {% if block.type == 'floor' %}
+              {% if block.settings.floor_number != blank and block.settings.floor_name != blank %}
+                <div class="floor-item">
+                  <div class="floor-item-name" data-target-floor-number="{{ block.settings.floor_number }}">{{ block.settings.floor_name }}</div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <style>
+          .header-floor-wrapper .floor-items {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 32px;
+          }
+          .header-floor-wrapper .floor-item .floor-item-name {
+            font-size: 14px;
+            color: #ffffffad;
+            text-decoration: none;
+            transition: color .3s ease;
+            cursor: pointer;
+          }
+          .header-floor-wrapper .floor-item .floor-item-name:hover {
+            color: #fff;
+          }
+        </style>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const floorItems = document.querySelectorAll('.header-floor-wrapper .floor-item');
+            floorItems.forEach(item => {
+              item.addEventListener('click', function() {
+                // 获取被点击的楼层项的楼层号
+                const floorNameElement = item.querySelector('.floor-item-name');
+                if (!floorNameElement) return;
+                
+                const floorNumber = floorNameElement.getAttribute('data-target-floor-number');
+                if (!floorNumber) return;
+                
+                // 在页面中查找对应的楼层模块（如果有多个相同楼层，只定位到第一个）
+                const targetElement = document.querySelector(`[data-floor-number="${floorNumber}"]`);
+                if (!targetElement) return;
+                
+                // 计算目标位置（考虑固定头部的高度）
+                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                // 平滑滚动到目标位置，持续时间为500毫秒（0.5秒）
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+                });
+              });
+            });
+          });
+        </script>
+      </div>
+    {% endif %}
 
   </header>
 </{{ header_tag }}>

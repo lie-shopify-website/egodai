@@ -3600,13 +3600,16 @@ details-disclosure > details {
 
 
 /* 隐藏header图标 */
+sticky-header {
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
 sticky-header .header__icons {
     display: none;
 }
 sticky-header .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 sticky-header .header>.header__search {
     display: none;
