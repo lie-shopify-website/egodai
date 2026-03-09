@@ -112,6 +112,8 @@
     min-height: 38px;
     min-width: 138px;
     padding: 10px;
+    color: var(--slide-button-color);
+    background-color: var(--slide-button-bg);
     pointer-events: all;
     text-decoration: none
 }

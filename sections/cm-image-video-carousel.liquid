@@ -80,6 +80,8 @@
                     { "type": "textarea", "id": "slide_info", "label": "内容" },
 
                     { "type": "header","content":"按钮"},
+                    { "type": "paragraph", "content": "这里做了修改, 如果只填写链接, 那就当成一个正常按钮. 如果填写了下面的产品, 则会当成加购行为. 直接加购产品并跳转至checkout页面." },   
+                    { "type": "product", "id": "product", "label": "产品", "info":"默认就是加购产品第一个变体." },
                     { "type": "textarea", "id": "slide_button_text", "label": "按钮文字" },
                     { "type": "url", "id": "slide_button_url", "label": "按钮链接" },
                     { "type": "color", "id": "slide_button_color", "label": "按钮颜色", "default": "#141414" },
@@ -168,8 +170,17 @@
                                         {% if block.settings.slide_title != blank %} <div class="slide_title"><p class="slide_title-inner">{{ block.settings.slide_title }}</p></div> {% endif %}
                                         {% if block.settings.slide_info != blank %} <div class="slide_info">{{ block.settings.slide_info }}</div> {% endif %}
                                         
+
+                                        {% comment %} 如果填写产品, 则变成加购行为 {% endcomment %}
+                                        {% if block.settings.product != blank %}
+                                            {% assign curr_product = block.settings.product %}
+                                            {% assign default_variant = curr_product.selected_or_first_available_variant %}
+                                        {% endif %}
+
                                         {% if block.settings.slide_button_text != blank and block.settings.slide_button_url != blank %}
-                                            <div class="slide_button" style="--slide-button-color:{{ block.settings.slide_button_color }};--slide-button-bg:{{ block.settings.slide_button_bg }};">
+                                            <div class="slide_button {% if block.settings.product != blank %}js-globalBuynowBtn{% endif %}" 
+                                                {% if block.settings.product != blank %} data-product-id="{{ curr_product.id }}" data-variant-id="{{ default_variant.id }}" {% endif %}
+                                                style="--slide-button-color:{{ block.settings.slide_button_color }};--slide-button-bg:{{ block.settings.slide_button_bg }};">
                                                 <a href="{{ block.settings.slide_button_url }}" class="mf-btn"><span>{{ block.settings.slide_button_text }}</span></a>
                                             </div> 
                                         {% endif %}
