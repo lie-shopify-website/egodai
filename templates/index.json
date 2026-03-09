@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "cm_image_video_carousel_tTMTdC": {
       "type": "cm-image-video-carousel",
@@ -25,6 +25,7 @@
             "slide_sub_title": "A desktop pet robot that feels alive.",
             "slide_title": "Cubie",
             "slide_info": "It walks on your desk, explores, gets bored, and finds its own fun.\nTouch it. Talk to it. It reacts.",
+            "product": "cubie",
             "slide_button_text": "Secure Super Early Bird pricing",
             "slide_button_url": "shopify://collections",
             "slide_button_color": "#7ed957",
