@@ -1,0 +1,140 @@
+{% schema %}
+    {
+        "name": "包装清单",
+        "settings": [
+            { "type": "header","content":"定位设置"},
+            { "type": "select", "id": "floor_number", "label": "楼层序号", "options": [
+                    { "value": "", "label": "不设置" },
+                    { "value": "1", "label": "1" },
+                    { "value": "2", "label": "2" },
+                    { "value": "3", "label": "3" },
+                    { "value": "4", "label": "4" },
+                    { "value": "5", "label": "5" },
+                    { "value": "6", "label": "6" },
+                    { "value": "7", "label": "7" },
+                    { "value": "8", "label": "8" },
+                    { "value": "9", "label": "9" },
+                    { "value": "10", "label": "10" },
+                    { "value": "11", "label": "11" },
+                    { "value": "12", "label": "12" },
+                    { "value": "13", "label": "13" },
+                    { "value": "14", "label": "14" },
+                    { "value": "15", "label": "15" },
+                    { "value": "16", "label": "16" },
+                    { "value": "17", "label": "17" },
+                    { "value": "18", "label": "18" },
+                    { "value": "19", "label": "19" },
+                    { "value": "20", "label": "20" }
+                ],
+                "default": ""
+            },
+
+            { "type": "header","content":"标题"},
+            { "type": "textarea", "id": "section_title", "label": "大标题" },
+            { "type": "textarea", "id": "section_info", "label": "内容" },
+
+
+            { "type": "header","content":"其他"},
+            { "type": "color", "id": "background", "label": "背景", "default": "#d8d7d3" },
+            { "type": "color", "id": "text_color", "label": "文字颜色", "default": "#000000" },
+            { "type": "select", "id": "container_width", "label": "容器宽度", "options": [
+                    { "value": "full_width", "label": "全宽" },
+                    { "value": "1440", "label": "1440px" }
+                ],
+                "default": "1440"
+            },
+            { "type": "checkbox", "id": "remove_top_padding", "label": "移除上边距", "default": false },
+            { "type": "checkbox", "id": "remove_bottom_padding", "label": "移除下边距", "default": false },
+            { "type": "text", "id": "custom_class", "label": "自定义class" }
+        ],
+        "blocks": [
+            {
+                "type": "product",
+                "name": "产品",
+                "settings": [
+                    { "type": "image_picker", "id": "image", "label": "图片"},
+                    { "type": "text", "id": "title", "label": "标题" }
+                ]
+            }
+        ],
+
+        "presets": [
+            {
+                "name": "包装清单",
+                "category": "custom"
+            }
+        ]
+    }
+{% endschema %}
+
+<div data-section-id="{{ section.id }}" class="cm-inthebox-layout" {% if section.settings.floor_number != blank %}data-floor-number="{{ section.settings.floor_number }}"{% endif %}>
+
+<div class="cm-inthebox {{ section.settings.custom_class }} {% if section.settings.remove_top_padding %}remove-top-space{% endif %} {% if section.settings.remove_bottom_padding %}remove-bottom-space{% endif %}">
+
+    {{ 'cm-inthebox.css' | asset_url | stylesheet_tag }}
+    <style>
+        [data-section-id="{{ section.id }}"] {
+            --background-color: {{ section.settings.background }};
+            --text_color: {{ section.settings.text_color }};
+        }
+        {% if section.settings.container_width == '1440' %}
+            [data-section-id="{{ section.id }}"] .layout-container {
+              max-width: 1440px;
+              margin: 0 auto;
+            }
+        {% else %}
+            [data-section-id="{{ section.id }}"] .layout-container {
+              max-width: 100%;
+            }
+        {% endif %}
+    </style>
+
+    <div class="layout-container">
+        {% if section.settings.section_title != blank or section.settings.section_info != blank %}
+        <div class="heading-box">
+            {% if section.settings.section_title != blank %}
+                <div class="section-title"><h2 class="slide_title-inner">{{ section.settings.section_title }}</h2></div>
+            {% endif %}
+            {% if section.settings.section_info != blank %}
+                <div class="section-info"><p>{{ section.settings.section_info }}</p></div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="content-layout">
+            <div class="product-cards">
+                <div class="product-cards-inner">
+                    {% for block in section.blocks %}
+                        <div class="product-card">
+
+                            <div class="product-image">
+                                {% liquid
+                                    assign image = block.settings.image
+                                    assign pc_src = image | image_url: width: 767
+                                    assign pad_src = image | image_url: width: 767
+                                    assign m_src = image | image_url: width: 767
+                                %}
+                                {% render 'resp-img'
+                                    pc_src: pc_src,
+                                    pad_src: pad_src,
+                                    m_src: m_src,
+                                    lazy: true, 
+                                    class_name: 'resp-img-class',
+                                    alt: block.settings.title
+                                %}
+                            </div>
+                            
+                            {% if block.settings.title != blank %}
+                                <div class="product-title">
+                                    <p>{{ block.settings.title }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

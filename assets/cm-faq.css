@@ -1,0 +1,207 @@
+.cm-faq {
+    --card-border-radius: 16px;
+    --columns-space-vertical: 48px;
+    --columns-space-horizontal: 24px;
+    background-color: var(--background-color);
+    padding: var(--columns-space-vertical) var(--columns-space-horizontal)
+}
+
+.cm-faq p {
+    margin: 0
+}
+.cm-faq h2, .cm-faq h3{
+    margin: 0;
+}
+.cm-faq .heading-box {
+    margin-bottom: 20px
+}
+
+.cm-faq .heading-box .section-title .slide_title-inner {
+    color: var(--text_color);
+    font-family: Brand-ext !important;
+    font-size: 28px;
+    font-stretch: 120%;
+    font-weight: 700;
+    line-height: 110%
+}
+
+.cm-faq .heading-box .section-info {
+    color: var(--text_color);
+    font-family: Brand-ext !important;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 16px
+}
+
+.cm-faq .faq-list {
+    background-color: #fff;
+    border-radius: var(--card-border-radius);
+    padding: 24px 16px
+}
+
+.cm-faq .faq-list .faq-items {
+    border-bottom: 1px solid var(--color-gray-5)
+}
+
+.cm-faq .faq-list .faq-item {
+    border-top: 1px solid var(--color-gray-5);
+    cursor: pointer;
+    padding: 20px 0
+}
+
+.cm-faq .faq-list .faq-question h3 {
+    color: var(--color-gray-9);
+    font-family: Brand-ext !important;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 0
+}
+
+.cm-faq .faq-list .faq-question {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px
+}
+
+.cm-faq .faq-list .faq-question .arrow-down {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 24px;
+    flex: 0 0 24px;
+    max-width: 24px
+}
+
+.cm-faq .faq-list .faq-question .arrow-down p {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+.cm-faq .faq-list .faq-question .arrow-down svg {
+    height: 24px;
+    width: 24px
+}
+
+.cm-faq .faq-list .faq-question .arrow-down svg path {
+    stroke: var(--color-dark)
+}
+
+.cm-faq .faq-list .faq-answer .faq-answer-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    -webkit-transition: all .3s cubic-bezier(.5, .15, 0, 1);
+    transition: all .3s cubic-bezier(.5, .15, 0, 1)
+}
+
+.cm-faq .faq-list .faq-answer .faq-answer-inner {
+    min-height: 0;
+    overflow: hidden
+}
+
+.cm-faq .faq-list .faq-answer .faq-answer-text {
+    color: var(--color-dark);
+    font-family: Brand-ext !important;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 16px
+}
+
+.cm-faq .faq-list .faq-item.open .faq-answer-content {
+    grid-template-rows: 1fr
+}
+
+.cm-faq.remove-top-space {
+    padding-top: 0 !important
+}
+
+.cm-faq.remove-bottom-space {
+    padding-bottom: 0 !important
+}
+
+@media (min-width:768px) {
+    .cm-faq .heading-box .section-info {
+        font-size: 16px
+    }
+
+    .cm-faq .faq-list .faq-question h3 {
+        font-size: 18px
+    }
+
+    .cm-faq .faq-list .faq-answer .faq-answer-text {
+        font-size: 16px
+    }
+}
+
+@media (min-width:1024px) {
+    .cm-faq {
+        --columns-space-vertical: 64px;
+        --columns-space-horizontal: 32px
+    }
+
+    .cm-faq .desktop-hidden {
+        display: none !important
+    }
+
+    .cm-faq .heading-box {
+        margin-bottom: 24px
+    }
+
+    .cm-faq .heading-box .section-title .slide_title-inner {
+        font-size: 32px
+    }
+
+    .cm-faq .faq-list {
+        padding: 48px
+    }
+
+    .cm-faq .faq-list .faq-item {
+        padding: 24px 0
+    }
+}
+
+@media (min-width:1536px) {
+    .cm-faq {
+        --columns-space-vertical: 80px;
+        --columns-space-horizontal: 48px
+    }
+
+    .cm-faq .heading-box .section-title .slide_title-inner {
+        font-size: 40px
+    }
+
+    .cm-faq .heading-box .section-info {
+        font-size: 16px
+    }
+
+    .cm-faq .faq-list .faq-question h3 {
+        font-size: 18px
+    }
+
+    .cm-faq .faq-list .faq-answer .faq-answer-text {
+        font-size: 16px
+    }
+}
+
+@media (max-width:1023px) {
+    .cm-faq .mobile-hidden {
+        display: none !important
+    }
+}
+
+@media (max-width:padpx) {
+    .cm-faq .mobile-hidden {
+        display: none !important
+    }
+}

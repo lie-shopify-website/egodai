@@ -8,557 +8,686 @@
  * ------------------------------------------------------------
  */
  {
-    "sections": {
-      "cm_image_video_carousel_tTMTdC": {
-        "type": "cm-image-video-carousel",
-        "blocks": {
-          "image_BkGYYE": {
-            "type": "image",
-            "settings": {
-              "slide_image": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
-              "slide_image_mb": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
-              "slide_video": "shopify://files/videos/探索+怂.mp4",
-              "slide_video_mb": "shopify://files/videos/探索+怂.mp4",
-              "desktop_shadow": true,
-              "content_position": "left_bottom",
-              "content_position_mb": "center_top",
-              "slide_sub_title": "A desktop pet robot that feels alive.",
-              "slide_title": "Cubie",
-              "slide_info": "It walks on your desk, explores, gets bored, and finds its own fun.\nTouch it. Talk to it. It reacts.",
-              "slide_button_text": "Secure Super Early Bird pricing",
-              "slide_button_url": "shopify://collections",
-              "slide_button_color": "#7ed957",
-              "slide_button_bg": "#1f1f21"
-            }
+  "sections": {
+    "cm_image_video_carousel_tTMTdC": {
+      "type": "cm-image-video-carousel",
+      "blocks": {
+        "image_BkGYYE": {
+          "type": "image",
+          "settings": {
+            "slide_image": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
+            "slide_image_mb": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
+            "slide_video": "shopify://files/videos/探索+怂.mp4",
+            "slide_video_mb": "shopify://files/videos/探索+怂.mp4",
+            "desktop_shadow": true,
+            "content_position": "left_bottom",
+            "content_position_mb": "center_top",
+            "slide_sub_title": "A desktop pet robot that feels alive.",
+            "slide_title": "Cubie",
+            "slide_info": "It walks on your desk, explores, gets bored, and finds its own fun.\nTouch it. Talk to it. It reacts.",
+            "slide_button_text": "Secure Super Early Bird pricing",
+            "slide_button_url": "shopify://collections",
+            "slide_button_color": "#7ed957",
+            "slide_button_bg": "#1f1f21"
           }
-        },
-        "block_order": [
-          "image_BkGYYE"
-        ],
-        "name": "图片视频轮播",
-        "settings": {
-          "floor_number": "1",
-          "autoplay": true,
-          "autoplay_interval": 5,
-          "height": 800,
-          "height_mb": 655,
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "custom_class": ""
         }
       },
-      "cm_one_video_GWRUFJ": {
-        "type": "cm-one-video",
-        "name": "单视频",
-        "settings": {
-          "floor_number": "",
-          "section_title": "Meet Cubie",
-          "section_info": "Presence｜Reactive｜Customizable",
-          "video": "shopify://files/videos/完整视频（去掉主图）.mov",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "center_top",
-          "content_position_mb": "center_center",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_media_with_text_wy99n6": {
-        "type": "cm-media-with-text",
-        "blocks": {
-          "media_text_ErKhN4": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image_mobile": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
-              "image_desktop": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
-              "ratio_mobile": "1/1",
-              "ratio_desktop": "1/1",
-              "layout_direction": "image_left",
-              "subheading": "No instructions needed.",
-              "heading": "Touch me. Say something. Watch how I respond.",
-              "content": "It feels like interacting with a small life on your desk.",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_GxCViP": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/ce8f8801f1e8f103a35534a89ba4bcc7.webp",
-              "ratio_mobile": "1/1",
-              "ratio_desktop": "1/1",
-              "layout_direction": "image_right",
-              "subheading": "Cubie doesn’t demand attention.",
-              "heading": "You focus. I’ll do my thing.",
-              "content": "It explores quietly and reacts when you engage.",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_W9gXQm": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/processed_by_imagy_71ab888a-a238-4796-b698-b2420c8c566d.webp",
-              "ratio_mobile": "1/1",
-              "ratio_desktop": "1/1",
-              "layout_direction": "image_left",
-              "subheading": "This is where it becomes yours.",
-              "heading": "Create Your Cubie",
-              "content": "It won’t stay the same.\nYour settings shape its personality.",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_QQHhGy": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/64f55d64b91d06782b05decdbecc1e60.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_right",
-              "subheading": "",
-              "heading": "",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          }
-        },
-        "block_order": [
-          "media_text_ErKhN4",
-          "media_text_GxCViP",
-          "media_text_W9gXQm",
-          "media_text_QQHhGy"
-        ],
-        "name": "图文混排",
-        "settings": {
-          "floor_number": "",
-          "section_title": "Hi, I’m Cubie.",
-          "section_info": "I live on your desk.\nI move around, explore, and sometimes just chill.Don’t worry — I know where the edge is.",
-          "remove_top_padding": true,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_one_image_EzABeR": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "2",
-          "section_title": "Secure your early access.",
-          "section_info": "If you decide not to back the campaign, your deposit is fully refundable.",
-          "image": "shopify://shop_images/WechatIMG272.jpg",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "center_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": true,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_media_with_text_TUEXke": {
-        "type": "cm-media-with-text",
-        "blocks": {
-          "media_text_pCnBfH": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/processed_by_imagy_dd73f48a-7bc9-4afe-950b-642ff7ca49e0.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_left",
-              "subheading": "",
-              "heading": "Simple AI chat",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_7KtawW": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/processed_by_imagy_71ab888a-a238-4796-b698-b2420c8c566d.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_right",
-              "subheading": "",
-              "heading": "Focus timers",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_6AayUR": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image_desktop": "shopify://shop_images/ce8f8801f1e8f103a35534a89ba4bcc7.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_left",
-              "subheading": "",
-              "heading": "Interactive mini-games",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_qAXEnG": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/9c3d21721ebc331dd0cb01b53dd8eb87.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_right",
-              "subheading": "No technical skills required.\nNo complicated setup.\nChanges happen instantly.",
-              "heading": "All controlled in one simple app",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          },
-          "media_text_g6PYBp": {
-            "type": "media_text",
-            "settings": {
-              "media_type": "image",
-              "image": "shopify://shop_images/a89a10a388e358063669774d270b3679.webp",
-              "ratio_mobile": "16/9",
-              "ratio_desktop": "16/9",
-              "layout_direction": "image_left",
-              "subheading": "More interactions｜More mini-games｜Free OTA updates for backers",
-              "heading": "Constantly evolving",
-              "content": "",
-              "button_label": "",
-              "button_link": "",
-              "button_bg_color": "#fed100",
-              "button_text_color": "#141414"
-            }
-          }
-        },
-        "block_order": [
-          "media_text_pCnBfH",
-          "media_text_7KtawW",
-          "media_text_6AayUR",
-          "media_text_qAXEnG",
-          "media_text_g6PYBp"
-        ],
-        "name": "图文混排",
-        "settings": {
-          "floor_number": "",
-          "section_title": "Cute, but capable.",
-          "section_info": "",
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#1f1f21",
-          "custom_class": ""
-        }
-      },
-      "cm_one_image_eg9nmm": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "",
-          "section_title": "Cubie isn’t something on your desk.",
-          "section_info": "It’s something happening on your desk.（布景对比）",
-          "image": "shopify://shop_images/processed_by_imagy.webp",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "left_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_one_image_CcK6Kq": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "3",
-          "section_title": "Secure the $179 Early-Bird",
-          "section_info": "100% Refundable ｜ Limited Spots ｜ Launching on 【03/2026】",
-          "image": "shopify://shop_images/WX20260225-140937_2x_36053aef-5ae5-4783-bdb9-5f1947475b96.png",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "center_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_one_image_DXGERn": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "",
-          "section_title": "",
-          "section_info": "",
-          "image": "shopify://shop_images/WechatIMG272.jpg",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "center_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": true,
-          "remove_bottom_padding": true,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "cm_one_image_hbcFAz": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "",
-          "section_title": "What’s in the Box",
-          "section_info": "",
-          "image": "shopify://shop_images/f488682f82105bca8bc494a9640cedc0.webp",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "left_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "",
-          "button_link": "",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": false,
-          "remove_bottom_padding": true,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
-      },
-      "collapsible_content_a8kUM4": {
-        "type": "collapsible-content",
-        "blocks": {
-          "collapsible_row_Jx9ADX": {
-            "type": "collapsible_row",
-            "settings": {
-              "heading": "Is the deposit really refundable?",
-              "icon": "check_mark",
-              "row_content": "<p>Yes. You may request a full refund anytime before the Kickstarter campaign launches.</p>",
-              "page": ""
-            }
-          },
-          "collapsible_row_3p9UkT": {
-            "type": "collapsible_row",
-            "settings": {
-              "heading": "How will the deposit be deducted?",
-              "icon": "check_mark",
-              "row_content": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>",
-              "page": ""
-            }
-          },
-          "collapsible_row_hjaYPh": {
-            "type": "collapsible_row",
-            "settings": {
-              "heading": "When do you launch?",
-              "icon": "check_mark",
-              "row_content": "",
-              "page": ""
-            }
-          },
-          "collapsible_row_gRx8TC": {
-            "type": "collapsible_row",
-            "settings": {
-              "heading": "Collapsible row",
-              "icon": "check_mark",
-              "row_content": "",
-              "page": ""
-            }
-          }
-        },
-        "block_order": [
-          "collapsible_row_Jx9ADX",
-          "collapsible_row_3p9UkT",
-          "collapsible_row_hjaYPh",
-          "collapsible_row_gRx8TC"
-        ],
-        "name": "t:sections.collapsible_content.presets.name",
-        "settings": {
-          "caption": "",
-          "heading": "FAQ",
-          "heading_size": "h1",
-          "heading_alignment": "center",
-          "layout": "none",
-          "container_color_scheme": "",
-          "color_scheme": "",
-          "open_first_collapsible_row": false,
-          "image_ratio": "adapt",
-          "desktop_layout": "image_second",
-          "padding_top": 36,
-          "padding_bottom": 36
-        }
-      },
-      "newsletter_mPc7XM": {
-        "type": "newsletter",
-        "blocks": {
-          "heading_QjQzNp": {
-            "type": "heading",
-            "settings": {
-              "heading": "Get Launch Notification",
-              "heading_size": "h1"
-            }
-          },
-          "paragraph_rwf4tk": {
-            "type": "paragraph",
-            "settings": {
-              "text": "<p>Sign up to receive launch alerts and campaign updates as soon as we go live.</p>"
-            }
-          },
-          "email_form_e9Jntk": {
-            "type": "email_form",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "heading_QjQzNp",
-          "paragraph_rwf4tk",
-          "email_form_e9Jntk"
-        ],
-        "name": "t:sections.newsletter.presets.name",
-        "settings": {
-          "color_scheme": "",
-          "full_width": true,
-          "padding_top": 40,
-          "padding_bottom": 52
-        }
-      },
-      "cm_one_image_eN9NEQ": {
-        "type": "cm-one-image",
-        "name": "单图",
-        "settings": {
-          "floor_number": "",
-          "section_title": "Join the Community",
-          "section_info": "Vote, suggest features, and help shape expressions and interactions.\nCubie evolves with your input.",
-          "image": "shopify://shop_images/cba75ed91ce25ca854d8e5ccee03ed39.png",
-          "ratio_mobile": "16/9",
-          "ratio_desktop": "16/9",
-          "overlay_color": "#000000",
-          "overlay_opacity": 0,
-          "content_position": "center_bottom",
-          "content_position_mb": "center_bottom",
-          "text_color": "#e3fc02",
-          "subheading": "",
-          "heading": "",
-          "content": "",
-          "button_label": "Follow Our Socials",
-          "button_link": "shopify://collections",
-          "button_bg_color": "#fed100",
-          "button_text_color": "#141414",
-          "remove_top_padding": false,
-          "remove_bottom_padding": false,
-          "container_width": "1440",
-          "background_color": "#000000",
-          "custom_class": ""
-        }
+      "block_order": [
+        "image_BkGYYE"
+      ],
+      "name": "图片视频轮播",
+      "settings": {
+        "floor_number": "1",
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "height": 800,
+        "height_mb": 655,
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "custom_class": ""
       }
     },
-    "order": [
-      "cm_image_video_carousel_tTMTdC",
-      "cm_one_video_GWRUFJ",
-      "cm_media_with_text_wy99n6",
-      "cm_one_image_EzABeR",
-      "cm_media_with_text_TUEXke",
-      "cm_one_image_eg9nmm",
-      "cm_one_image_CcK6Kq",
-      "cm_one_image_DXGERn",
-      "cm_one_image_hbcFAz",
-      "collapsible_content_a8kUM4",
-      "newsletter_mPc7XM",
-      "cm_one_image_eN9NEQ"
-    ]
-  }
-  
+    "cm_one_video_GWRUFJ": {
+      "type": "cm-one-video",
+      "name": "单视频",
+      "settings": {
+        "floor_number": "",
+        "section_title": "Meet Cubie",
+        "section_info": "Presence｜Reactive｜Customizable",
+        "video": "shopify://files/videos/完整视频（去掉主图）.mov",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_top",
+        "content_position_mb": "center_center",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_media_with_text_wy99n6": {
+      "type": "cm-media-with-text",
+      "blocks": {
+        "media_text_ErKhN4": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image_mobile": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
+            "image_desktop": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
+            "ratio_mobile": "1/1",
+            "ratio_desktop": "1/1",
+            "layout_direction": "image_left",
+            "subheading": "No instructions needed.",
+            "heading": "Touch me. Say something. Watch how I respond.",
+            "content": "It feels like interacting with a small life on your desk.",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_GxCViP": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/ce8f8801f1e8f103a35534a89ba4bcc7.webp",
+            "ratio_mobile": "1/1",
+            "ratio_desktop": "1/1",
+            "layout_direction": "image_right",
+            "subheading": "Cubie doesn’t demand attention.",
+            "heading": "You focus. I’ll do my thing.",
+            "content": "It explores quietly and reacts when you engage.",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_W9gXQm": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/processed_by_imagy_71ab888a-a238-4796-b698-b2420c8c566d.webp",
+            "ratio_mobile": "1/1",
+            "ratio_desktop": "1/1",
+            "layout_direction": "image_left",
+            "subheading": "This is where it becomes yours.",
+            "heading": "Create Your Cubie",
+            "content": "It won’t stay the same.\nYour settings shape its personality.",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_QQHhGy": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/64f55d64b91d06782b05decdbecc1e60.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_right",
+            "subheading": "",
+            "heading": "",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        }
+      },
+      "block_order": [
+        "media_text_ErKhN4",
+        "media_text_GxCViP",
+        "media_text_W9gXQm",
+        "media_text_QQHhGy"
+      ],
+      "name": "图文混排",
+      "settings": {
+        "floor_number": "",
+        "section_title": "Hi, I’m Cubie.",
+        "section_info": "I live on your desk.\nI move around, explore, and sometimes just chill.Don’t worry — I know where the edge is.",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_EzABeR": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "2",
+        "section_title": "Secure your early access.",
+        "section_info": "If you decide not to back the campaign, your deposit is fully refundable.",
+        "image": "shopify://shop_images/WechatIMG272.jpg",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_media_with_text_TUEXke": {
+      "type": "cm-media-with-text",
+      "blocks": {
+        "media_text_pCnBfH": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/processed_by_imagy_dd73f48a-7bc9-4afe-950b-642ff7ca49e0.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_left",
+            "subheading": "",
+            "heading": "Simple AI chat",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_7KtawW": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/processed_by_imagy_71ab888a-a238-4796-b698-b2420c8c566d.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_right",
+            "subheading": "",
+            "heading": "Focus timers",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_6AayUR": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image_desktop": "shopify://shop_images/ce8f8801f1e8f103a35534a89ba4bcc7.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_left",
+            "subheading": "",
+            "heading": "Interactive mini-games",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_qAXEnG": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/9c3d21721ebc331dd0cb01b53dd8eb87.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_right",
+            "subheading": "No technical skills required.\nNo complicated setup.\nChanges happen instantly.",
+            "heading": "All controlled in one simple app",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        },
+        "media_text_g6PYBp": {
+          "type": "media_text",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/a89a10a388e358063669774d270b3679.webp",
+            "ratio_mobile": "16/9",
+            "ratio_desktop": "16/9",
+            "layout_direction": "image_left",
+            "subheading": "More interactions｜More mini-games｜Free OTA updates for backers",
+            "heading": "Constantly evolving",
+            "content": "",
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#fed100",
+            "button_text_color": "#141414"
+          }
+        }
+      },
+      "block_order": [
+        "media_text_pCnBfH",
+        "media_text_7KtawW",
+        "media_text_6AayUR",
+        "media_text_qAXEnG",
+        "media_text_g6PYBp"
+      ],
+      "name": "图文混排",
+      "settings": {
+        "floor_number": "",
+        "section_title": "Cute, but capable.",
+        "section_info": "",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#1f1f21",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_eg9nmm": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "Cubie isn’t something on your desk.",
+        "section_info": "It’s something happening on your desk.（布景对比）",
+        "image": "shopify://shop_images/processed_by_imagy.webp",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "left_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_CcK6Kq": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "3",
+        "section_title": "Secure the $179 Early-Bird",
+        "section_info": "100% Refundable ｜ Limited Spots ｜ Launching on 【03/2026】",
+        "image": "shopify://shop_images/WX20260225-140937_2x_36053aef-5ae5-4783-bdb9-5f1947475b96.png",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_DXGERn": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image": "shopify://shop_images/WechatIMG272.jpg",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_hbcFAz": {
+      "type": "cm-one-image",
+      "disabled": true,
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "What’s in the Box",
+        "section_info": "",
+        "image": "shopify://shop_images/f488682f82105bca8bc494a9640cedc0.webp",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "left_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_inthebox_bLHfPL": {
+      "type": "cm-inthebox",
+      "blocks": {
+        "product_APeYA8": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_7KJkKW": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_tT4p79": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_fRUbRR": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_eBbeCC": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_CKAYDL": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        },
+        "product_DLBRfw": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/B_07672057-c712-4ace-a7c8-0de3ee1a01c5.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_APeYA8",
+        "product_7KJkKW",
+        "product_tT4p79",
+        "product_fRUbRR",
+        "product_eBbeCC",
+        "product_CKAYDL",
+        "product_DLBRfw"
+      ],
+      "name": "包装清单",
+      "settings": {
+        "floor_number": "",
+        "section_title": "What's in the Box",
+        "section_info": "",
+        "background": "#141414",
+        "text_color": "#ffffff",
+        "container_width": "1440",
+        "remove_top_padding": false,
+        "remove_bottom_padding": true,
+        "custom_class": ""
+      }
+    },
+    "collapsible_content_a8kUM4": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Jx9ADX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is the deposit really refundable?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes. You may request a full refund anytime before the Kickstarter campaign launches.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3p9UkT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How will the deposit be deducted?",
+            "icon": "check_mark",
+            "row_content": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hjaYPh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When do you launch?",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_gRx8TC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Jx9ADX",
+        "collapsible_row_3p9UkT",
+        "collapsible_row_hjaYPh",
+        "collapsible_row_gRx8TC"
+      ],
+      "disabled": true,
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cm_faq_LrhbrU": {
+      "type": "cm-faq",
+      "blocks": {
+        "questions_DT6WTF": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "Is the deposit really refundable?",
+            "questions_richtext": "<p>Yes. You may request a full refund anytime before the Kickstarter campaign launches.</p>"
+          }
+        },
+        "questions_BmCqAi": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "How will the deposit be deducted?",
+            "questions_richtext": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>"
+          }
+        },
+        "questions_Jj9qDQ": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "When do you launch?",
+            "questions_richtext": "<p><br/>When do you launch?<br/><br/></p>"
+          }
+        },
+        "questions_tiwMz6": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "Collapsible row",
+            "questions_richtext": "<p><br/>Collapsible row<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "questions_DT6WTF",
+        "questions_BmCqAi",
+        "questions_Jj9qDQ",
+        "questions_tiwMz6"
+      ],
+      "name": "新版FAQ",
+      "settings": {
+        "floor_number": "",
+        "section_title": "FAQ & Support",
+        "section_info": "",
+        "background": "#141414",
+        "text_color": "#ffffff",
+        "container_width": "1440",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "custom_class": ""
+      }
+    },
+    "newsletter_mPc7XM": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_QjQzNp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get Launch Notification",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_rwf4tk": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sign up to receive launch alerts and campaign updates as soon as we go live.</p>"
+          }
+        },
+        "email_form_e9Jntk": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_QjQzNp",
+        "paragraph_rwf4tk",
+        "email_form_e9Jntk"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "cm_one_image_eN9NEQ": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "Join the Community",
+        "section_info": "Vote, suggest features, and help shape expressions and interactions.\nCubie evolves with your input.",
+        "image": "shopify://shop_images/cba75ed91ce25ca854d8e5ccee03ed39.png",
+        "ratio_mobile": "16/9",
+        "ratio_desktop": "16/9",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#e3fc02",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "Follow Our Socials",
+        "button_link": "shopify://collections",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": false,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "cm_image_video_carousel_tTMTdC",
+    "cm_one_video_GWRUFJ",
+    "cm_media_with_text_wy99n6",
+    "cm_one_image_EzABeR",
+    "cm_media_with_text_TUEXke",
+    "cm_one_image_eg9nmm",
+    "cm_one_image_CcK6Kq",
+    "cm_one_image_DXGERn",
+    "cm_one_image_hbcFAz",
+    "cm_inthebox_bLHfPL",
+    "collapsible_content_a8kUM4",
+    "cm_faq_LrhbrU",
+    "newsletter_mPc7XM",
+    "cm_one_image_eN9NEQ"
+  ]
+}

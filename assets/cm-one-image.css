@@ -8,14 +8,21 @@
 .cm-one-image p {
   margin:0;
 }
+.cm-one-image h2, .cm-one-image h3{
+  margin: 0;
+}
 
 .cm-one-image .layout-container {
   width: 100%;
 }
+@media (max-width:767px) {
+  .cm-one-image .layout-container {
+    padding: 0 24px;
+  }
+}
 
 .cm-one-image .heading-box {
   margin-bottom: 20px;
-  padding: 0 24px;
 }
 
 .cm-one-image .heading-box .section-title .slide_title-inner {
@@ -47,6 +54,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  border-radius: 16px;
 }
 
 .cm-one-image .cm-one-image__media a {

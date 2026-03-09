@@ -5,6 +5,9 @@
 .hm-slideshow p {
     margin:0;
 }
+.hm-slideshow h2, .hm-slideshow h3{
+    margin: 0;
+}
 .hm-slideshow .splide-box .slide-image {
     height: var(--slide-height-mb);
     overflow: hidden;

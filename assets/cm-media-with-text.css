@@ -8,14 +8,21 @@
 .cm-media-with-text p {
   margin:0;
 }
+.cm-media-with-text h2, .cm-media-with-text h3{
+  margin: 0;
+}
 
 .cm-media-with-text .layout-container {
   width: 100%;
 }
+@media (max-width:767px) {
+  .cm-media-with-text .layout-container {
+    padding: 0 24px;
+  }
+}
 
 .cm-media-with-text .heading-box {
   margin-bottom: 20px;
-  padding: 0 24px;
 }
 
 .cm-media-with-text .heading-box .section-title .slide_title-inner {
@@ -58,6 +65,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  border-radius: 16px;
 }
 
 .cm-media-with-text__media a {
@@ -127,7 +135,6 @@
 
 .cm-media-with-text__content-inner {
   text-align: left;
-  padding: 0 24px;
 }
 
 .cm-media-with-text__content .cm-slide-sub-title {
