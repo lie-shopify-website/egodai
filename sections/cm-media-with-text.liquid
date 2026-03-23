@@ -63,6 +63,7 @@
                     { "type": "video", "id": "video", "label": "通用视频（未单独设置手机/电脑时使用）" },
                     { "type": "image_picker", "id": "poster_image", "label": "视频封面图（可选）" },
                     { "type": "select", "id": "ratio_mobile", "label": "手机端比例", "options": [
+                            { "value": "auto", "label": "自动" },
                             { "value": "16/9", "label": "16:9" },
                             { "value": "1/1", "label": "1:1" },
                             { "value": "4/3", "label": "4:3" },
@@ -74,6 +75,7 @@
                         "default": "16/9"
                     },
                     { "type": "select", "id": "ratio_desktop", "label": "电脑端比例", "options": [
+                            { "value": "auto", "label": "自动" },
                             { "value": "16/9", "label": "16:9" },
                             { "value": "1/1", "label": "1:1" },
                             { "value": "4/3", "label": "4:3" },
@@ -133,12 +135,87 @@
   {% endif %}
 
   {% for block in section.blocks %}
+    {%- liquid
+      assign mwt_auto_m_ok = false
+      assign mwt_auto_d_ok = false
+      if block.settings.media_type == 'video'
+        assign mwt_video_mobile = block.settings.video_mobile
+        assign mwt_video_desktop = block.settings.video_desktop
+        if mwt_video_mobile == blank
+          assign mwt_video_mobile = block.settings.video
+        endif
+        if mwt_video_desktop == blank
+          assign mwt_video_desktop = block.settings.video
+        endif
+        if mwt_video_mobile == blank and mwt_video_desktop != blank
+          assign mwt_video_mobile = mwt_video_desktop
+        endif
+        assign mwt_video_for_mobile = mwt_video_mobile
+        if mwt_video_desktop != blank
+          assign mwt_video_for_desktop = mwt_video_desktop
+        else
+          assign mwt_video_for_desktop = mwt_video_for_mobile
+        endif
+        if mwt_video_for_mobile != blank
+          assign mwt_auto_m_ok = true
+          assign mwt_auto_m_ar = mwt_video_for_mobile.aspect_ratio
+        endif
+        if mwt_video_for_desktop != blank
+          assign mwt_auto_d_ok = true
+          assign mwt_auto_d_ar = mwt_video_for_desktop.aspect_ratio
+        endif
+      else
+        assign mwt_image_mobile = block.settings.image_mobile
+        assign mwt_image_desktop = block.settings.image_desktop
+        if mwt_image_mobile == blank
+          assign mwt_image_mobile = block.settings.image
+        endif
+        if mwt_image_desktop == blank
+          assign mwt_image_desktop = block.settings.image
+        endif
+        if mwt_image_mobile == blank and mwt_image_desktop != blank
+          assign mwt_image_mobile = mwt_image_desktop
+        endif
+        assign mwt_image_for_mobile = mwt_image_mobile
+        if mwt_image_desktop != blank
+          assign mwt_image_for_desktop = mwt_image_desktop
+        else
+          assign mwt_image_for_desktop = mwt_image_for_mobile
+        endif
+        if mwt_image_for_mobile != blank
+          assign mwt_auto_m_ok = true
+          assign mwt_auto_m_ar = mwt_image_for_mobile.aspect_ratio
+        endif
+        if mwt_image_for_desktop != blank
+          assign mwt_auto_d_ok = true
+          assign mwt_auto_d_ar = mwt_image_for_desktop.aspect_ratio
+        endif
+      endif
+    -%}
     [data-section-id="{{ section.id }}"] [data-block-id="{{ block.id }}"] .cm-media-with-text__media--mobile {
-      aspect-ratio: {{ block.settings.ratio_mobile }};
+      {% if block.settings.ratio_mobile == 'auto' %}
+        {% if mwt_auto_m_ok %}
+          aspect-ratio: {{ mwt_auto_m_ar }};
+        {% else %}
+          aspect-ratio: auto;
+        {% endif %}
+        height: auto;
+      {% else %}
+        aspect-ratio: {{ block.settings.ratio_mobile }};
+      {% endif %}
     }
     @media screen and (min-width: 750px) {
       [data-section-id="{{ section.id }}"] [data-block-id="{{ block.id }}"] .cm-media-with-text__media--desktop {
-        aspect-ratio: {{ block.settings.ratio_desktop }};
+        {% if block.settings.ratio_desktop == 'auto' %}
+          {% if mwt_auto_d_ok %}
+            aspect-ratio: {{ mwt_auto_d_ar }};
+          {% else %}
+            aspect-ratio: auto;
+          {% endif %}
+          height: auto;
+        {% else %}
+          aspect-ratio: {{ block.settings.ratio_desktop }};
+        {% endif %}
       }
     }
   {% endfor %}

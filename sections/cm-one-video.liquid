@@ -38,7 +38,9 @@
             { "type": "video", "id": "video_desktop", "label": "电脑端视频" },
             { "type": "video", "id": "video", "label": "通用视频（未单独设置手机/电脑时使用）" },
             { "type": "image_picker", "id": "poster_image", "label": "封面图（可选）" },
+            { "type": "checkbox", "id": "video_autoplay", "label": "自动播放", "default": true },
             { "type": "select", "id": "ratio_mobile", "label": "手机端比例", "options": [
+                    { "value": "auto", "label": "自动" },
                     { "value": "16/9", "label": "16:9" },
                     { "value": "1/1", "label": "1:1" },
                     { "value": "4/3", "label": "4:3" },
@@ -50,6 +52,7 @@
                 "default": "16/9"
             },
             { "type": "select", "id": "ratio_desktop", "label": "电脑端比例", "options": [
+                    { "value": "auto", "label": "自动" },
                     { "value": "16/9", "label": "16:9" },
                     { "value": "1/1", "label": "1:1" },
                     { "value": "4/3", "label": "4:3" },
@@ -89,6 +92,7 @@
             { "type": "textarea", "id": "subheading", "label": "小标题" },
             { "type": "textarea", "id": "heading", "label": "大标题" },
             { "type": "textarea", "id": "content", "label": "内容" },
+            { "type": "textarea", "id": "section_media_bottom_info", "label": "媒体底部内容" },
             { "type": "header","content":"按钮"},
             { "type": "textarea", "id": "button_label", "label": "按钮文字" },
             { "type": "url", "id": "button_link", "label": "按钮链接" },
@@ -123,6 +127,24 @@
   assign ratio_desktop = section.settings.ratio_desktop
   assign position = section.settings.content_position
   assign position_mb = section.settings.content_position_mb | default: position
+
+  assign video_mobile = section.settings.video_mobile
+  assign video_desktop = section.settings.video_desktop
+  if video_mobile == blank
+    assign video_mobile = section.settings.video
+  endif
+  if video_desktop == blank
+    assign video_desktop = section.settings.video
+  endif
+  if video_mobile == blank and video_desktop != blank
+    assign video_mobile = video_desktop
+  endif
+  assign video_for_mobile = video_mobile
+  if video_desktop != blank
+    assign video_for_desktop = video_desktop
+  else
+    assign video_for_desktop = video_for_mobile
+  endif
 -%}
 
 {% style %}
@@ -145,11 +167,29 @@
   {% endif %}
 
   [data-section-id="{{ section.id }}"] .cm-one-video__media--mobile {
-    aspect-ratio: {{ ratio_mobile }};
+    {% if ratio_mobile == 'auto' %}
+      {% if video_for_mobile != blank %}
+        aspect-ratio: {{ video_for_mobile.aspect_ratio }};
+      {% else %}
+        aspect-ratio: auto;
+      {% endif %}
+      height: auto;
+    {% else %}
+      aspect-ratio: {{ ratio_mobile }};
+    {% endif %}
   }
   @media screen and (min-width: 750px) {
     [data-section-id="{{ section.id }}"] .cm-one-video__media--desktop {
-      aspect-ratio: {{ ratio_desktop }};
+      {% if ratio_desktop == 'auto' %}
+        {% if video_for_desktop != blank %}
+          aspect-ratio: {{ video_for_desktop.aspect_ratio }};
+        {% else %}
+          aspect-ratio: auto;
+        {% endif %}
+        height: auto;
+      {% else %}
+        aspect-ratio: {{ ratio_desktop }};
+      {% endif %}
     }
   }
 
@@ -177,20 +217,6 @@
         {%- if section.settings.button_link != blank -%}
           <a href="{{ section.settings.button_link }}"></a>
         {%- endif -%}
-        
-        {%- liquid
-          assign video_mobile = section.settings.video_mobile
-          assign video_desktop = section.settings.video_desktop
-          if video_mobile == blank
-            assign video_mobile = section.settings.video
-          endif
-          if video_desktop == blank
-            assign video_desktop = section.settings.video
-          endif
-          if video_mobile == blank and video_desktop != blank
-            assign video_mobile = video_desktop
-          endif
-        -%}
         
         {%- if video_mobile != blank or video_desktop != blank -%}
           {% comment %} 视频 {% endcomment %}
@@ -228,7 +254,7 @@
           %}
           <mf-video 
             class="cm-one-video__video"
-            autoplay 
+            {% if section.settings.video_autoplay %}autoplay{% else %}controls{% endif %}
             muted 
             playsinline
             webkit-playsinline
@@ -268,6 +294,10 @@
           </div>
         </div>
       </div>
+
+      {%- if section.settings.section_media_bottom_info != blank -%}
+        <div class="cm-one-video__media-bottom-info">{{ section.settings.section_media_bottom_info | newline_to_br }}</div>
+      {%- endif -%}
     </div>
   </div>
 </div>
