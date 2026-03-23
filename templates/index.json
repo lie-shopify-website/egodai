@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "cm_image_video_carousel_tTMTdC": {
       "type": "cm-image-video-carousel",
@@ -241,7 +241,7 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "video": "shopify://files/videos/完整视频（去掉主图）.mov",
+        "video": "shopify://files/videos/首图.mp4",
         "video_autoplay": true,
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
@@ -648,8 +648,8 @@
     "cm_media_with_text_wy99n6",
     "cm_one_image_EzABeR",
     "cm_one_image_WGEiBb",
-    "cm_one_image_EtDQ7W",
     "cm_one_video_GWRUFJ",
+    "cm_one_image_EtDQ7W",
     "cm_one_image_YGW4iK",
     "cm_one_video_ibgBpG",
     "cm_one_video_qww7hR",
