@@ -178,8 +178,8 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image_mobile": "shopify://shop_images/home-001_02.png",
-        "image_desktop": "shopify://shop_images/home-001_02.png",
+        "image_mobile": "shopify://shop_images/home-001_01.png",
+        "image_desktop": "shopify://shop_images/home-001_01.png",
         "ratio_mobile": "16/9",
         "ratio_desktop": "16/9",
         "overlay_color": "#000000",
@@ -196,7 +196,7 @@
         "button_text_color": "#141414",
         "remove_top_padding": false,
         "remove_bottom_padding": false,
-        "container_width": "1440",
+        "container_width": "full_width",
         "background_color": "#000000",
         "custom_class": ""
       }
@@ -208,8 +208,6 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image_mobile": "shopify://shop_images/home-001_05.png",
-        "image_desktop": "shopify://shop_images/home-001_05.png",
         "ratio_mobile": "16/9",
         "ratio_desktop": "16/9",
         "overlay_color": "#000000",
