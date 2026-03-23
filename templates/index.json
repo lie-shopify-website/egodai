@@ -36,6 +36,7 @@
       "block_order": [
         "image_BkGYYE"
       ],
+      "disabled": true,
       "name": "图片视频轮播",
       "settings": {
         "floor_number": "1",
@@ -50,6 +51,7 @@
     },
     "cm_one_video_GWRUFJ": {
       "type": "cm-one-video",
+      "disabled": true,
       "name": "单视频",
       "settings": {
         "floor_number": "",
