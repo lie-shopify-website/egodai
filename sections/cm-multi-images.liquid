@@ -102,6 +102,13 @@
                   { "type": "url", "id": "button_link", "label": "按钮链接" },
                   { "type": "color", "id": "button_bg_color", "label": "按钮背景色", "default": "#FED100" },
                   { "type": "color", "id": "button_text_color", "label": "按钮文字色", "default": "#141414" },
+
+
+                  { "type": "header","content":"加购设置"},
+                  { "type": "checkbox", "id": "enable_global_buy", "label": "启用全局加购", "default": false },
+                  { "type": "product", "id": "product", "label": "产品", "info":"默认就是加购产品第一个变体." },
+
+
                   { "type": "checkbox", "id": "remove_top_padding", "label": "移除上边距", "default": false },
                   { "type": "checkbox", "id": "remove_bottom_padding", "label": "移除下边距", "default": false },
                   { "type": "select", "id": "container_width", "label": "容器宽度", "options": [
@@ -208,7 +215,19 @@
     }
   {% endstyle %}
   
-  <div class="cm-one-image {{ block.settings.custom_class }} {% if block.settings.remove_top_padding %}cm-remove-top-space{% endif %} {% if block.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" data-block-id="{{ block.id }}" {% if block.settings.floor_number != blank %}data-floor-number="{{ block.settings.floor_number }}"{% endif %}>
+  {% assign curr_product = block.settings.product %}
+  {% assign enable_global_buy = block.settings.enable_global_buy %}
+  {% assign default_variant = curr_product.selected_or_first_available_variant %}
+  
+  <div class="cm-one-image 
+      {% if enable_global_buy and curr_product != blank %}js-globalBuynowBtn{% endif %}
+      {{ block.settings.custom_class }} 
+      {% if block.settings.remove_top_padding %}cm-remove-top-space{% endif %}
+      {% if block.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" 
+      {% if enable_global_buy and curr_product != blank %}data-product-id="{{ curr_product.id }}" data-variant-id="{{ default_variant.id }}"{% endif %}
+      data-block-id="{{ block.id }}"
+      {% if block.settings.floor_number != blank %}data-floor-number="{{ block.settings.floor_number }}"{% endif %}
+  >
     <div class="layout-container">
       {% if block.settings.block_title != blank or block.settings.block_info != blank %}
         <div class="heading-box">

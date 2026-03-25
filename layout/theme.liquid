@@ -410,52 +410,23 @@
     {% comment %} 全局加购 {% endcomment %}
     <script>
     window.addEventListener('DOMContentLoaded', function() {
-      const directBuyBtns = document.querySelectorAll('.js-globalBuynowBtn');
-      if(directBuyBtns){
-        directBuyBtns.forEach(button => {
-          button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const productId = this.dataset.productId;
-            const variantId = this.dataset.variantId;
-            const quantity = this.dataset.quantity || 1;
-            
-            if(variantId){
-              addToCartAndCheckout(variantId, quantity);
-            }
-          });
-        });
-      }
-      
+      document.addEventListener('click', function(e) {
+        const button = e.target.closest('.js-globalBuynowBtn');
+        if (!button) return;
+
+        e.preventDefault();
+
+        const variantId = button.dataset.variantId;
+        const quantity = button.dataset.quantity || 1;
+
+        if (variantId) {
+          addToCartAndCheckout(variantId, quantity);
+        }
+      });
+
       function addToCartAndCheckout(variantId, quantity = 1) {
-
         window.location.href = `/cart/${variantId}:${quantity}`;
-
-        {% comment %} const formData = {
-          'items': [{
-            'id': variantId,
-            'quantity': quantity
-          }]
-        };
-
-        // 使用Shopify Ajax API添加商品
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-          // 成功添加后直接跳转到checkout
-          window.location.href = '/checkout';
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        }); {% endcomment %}
       }
-
     });
 
     </script>
