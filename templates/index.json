@@ -447,6 +447,68 @@
         "custom_class": ""
       }
     },
+    "cm_one_image_EwbTat": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_desktop": "shopify://shop_images/home-013.png",
+        "image_mobile": "shopify://shop_images/home-mb008.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_cKRLTq": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_desktop": "shopify://shop_images/home-009.png",
+        "image_mobile": "shopify://shop_images/home-mb009.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_inthebox_bLHfPL": {
       "type": "cm-inthebox",
       "blocks": {
@@ -623,6 +685,8 @@
     "cm_one_image_EtDQ7W",
     "cm_one_image_q9Vjjg",
     "cm_one_video_w6wNaG",
+    "cm_one_image_EwbTat",
+    "cm_one_image_cKRLTq",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
     "newsletter_mPc7XM"
