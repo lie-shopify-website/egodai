@@ -45,7 +45,7 @@
         "image_WrNnPb1": {
           "type": "image",
           "settings": {
-            "floor_number": "",
+            "floor_number": "1",
             "section_title": "",
             "section_info": "",
             "image_desktop": "shopify://shop_images/home-005.png",
