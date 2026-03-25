@@ -257,37 +257,6 @@
         "custom_class": ""
       }
     },
-    "cm_one_image_6gVj33": {
-      "type": "cm-one-image",
-      "name": "单图",
-      "settings": {
-        "floor_number": "",
-        "section_title": "",
-        "section_info": "",
-        "image_desktop": "shopify://shop_images/home-006.png",
-        "image_mobile": "shopify://shop_images/home-mb003.png",
-        "ratio_mobile": "auto",
-        "ratio_desktop": "auto",
-        "section_media_bottom_info": "",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_position": "center_bottom",
-        "content_position_mb": "center_bottom",
-        "text_color": "#ffffff",
-        "subheading": "",
-        "heading": "",
-        "content": "",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#fed100",
-        "button_text_color": "#141414",
-        "remove_top_padding": true,
-        "remove_bottom_padding": false,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
     "cm_one_image_Y7niDC": {
       "type": "cm-one-image",
       "name": "单图",
@@ -676,7 +645,6 @@
     "cm_one_image_q9Vjjg",
     "cm_one_video_GWRUFJ",
     "cm_one_image_EwbTat",
-    "cm_one_image_6gVj33",
     "cm_one_image_Y7niDC",
     "cm_one_image_WGEiBb",
     "cm_one_image_rA4wnt",
