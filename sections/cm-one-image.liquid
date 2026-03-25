@@ -118,8 +118,7 @@
 {% endschema %}
 
 
-
-{{ 'cm-one-image.css' | asset_url | stylesheet_tag }}
+{% comment %} 样式文件在theme.liquid里引入 {% endcomment %}
 
 {%- liquid
   assign ratio_mobile = section.settings.ratio_mobile
