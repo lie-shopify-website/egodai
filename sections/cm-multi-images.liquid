@@ -1,0 +1,284 @@
+
+{% schema %}
+    {
+        "name": "多图",
+        
+        "blocks": [
+            {
+                "type": "image",
+                "name": "图片块",
+                "settings": [
+                  { "type": "header","content":"定位设置"},
+                  { "type": "select", "id": "floor_number", "label": "楼层序号", "options": [
+                          { "value": "", "label": "不设置" },
+                          { "value": "1", "label": "1" },
+                          { "value": "2", "label": "2" },
+                          { "value": "3", "label": "3" },
+                          { "value": "4", "label": "4" },
+                          { "value": "5", "label": "5" },
+                          { "value": "6", "label": "6" },
+                          { "value": "7", "label": "7" },
+                          { "value": "8", "label": "8" },
+                          { "value": "9", "label": "9" },
+                          { "value": "10", "label": "10" },
+                          { "value": "11", "label": "11" },
+                          { "value": "12", "label": "12" },
+                          { "value": "13", "label": "13" },
+                          { "value": "14", "label": "14" },
+                          { "value": "15", "label": "15" },
+                          { "value": "16", "label": "16" },
+                          { "value": "17", "label": "17" },
+                          { "value": "18", "label": "18" },
+                          { "value": "19", "label": "19" },
+                          { "value": "20", "label": "20" }
+                      ],
+                      "default": ""
+                  },
+                  { "type": "header","content":"标题"},
+                  { "type": "textarea", "id": "section_title", "label": "大标题" },
+                  { "type": "textarea", "id": "section_info", "label": "内容" },
+
+                  { "type": "header","content":"图片"},
+                  { "type": "image_picker", "id": "image_desktop", "label": "背景图" },
+                  { "type": "image_picker", "id": "image_mobile", "label": "背景图 (手机端)" },
+                  { "type": "image_picker", "id": "image", "label": "通用背景图（未单独设置手机/电脑时使用）" },
+                  { "type": "select", "id": "ratio_mobile", "label": "手机端比例", "options": [
+                          { "value": "auto", "label": "自动" },
+                          { "value": "16/9", "label": "16:9" },
+                          { "value": "1/1", "label": "1:1" },
+                          { "value": "4/3", "label": "4:3" },
+                          { "value": "3/4", "label": "3:4" },
+                          { "value": "3/2", "label": "3:2" },
+                          { "value": "2/1", "label": "2:1" },
+                          { "value": "21/9", "label": "21:9" }
+                      ],
+                      "default": "16/9"
+                  },
+                  { "type": "select", "id": "ratio_desktop", "label": "电脑端比例", "options": [
+                          { "value": "auto", "label": "自动" },
+                          { "value": "16/9", "label": "16:9" },
+                          { "value": "1/1", "label": "1:1" },
+                          { "value": "4/3", "label": "4:3" },
+                          { "value": "3/4", "label": "3:4" },
+                          { "value": "3/2", "label": "3:2" },
+                          { "value": "2/1", "label": "2:1" },
+                          { "value": "21/9", "label": "21:9" }
+                      ],
+                      "default": "16/9"
+                  },
+                  { "type": "textarea", "id": "section_media_bottom_info", "label": "媒体底部内容" },
+
+                  { "type": "color", "id": "overlay_color", "label": "遮罩颜色", "default": "#000000" },
+                  { "type": "range", "id": "overlay_opacity", "min": 0, "max": 1, "step": 0.1, "default": 0, "label": "遮罩透明度" },
+                  { "type": "header","content":"内容与定位"},
+                  { "type": "select", "id": "content_position", "options": [
+                          { "value": "left_top", "label": "左上" },
+                          { "value": "left_center", "label": "左中" },
+                          { "value": "left_bottom", "label": "左下" },
+                          { "value": "center_top", "label": "中上" },
+                          { "value": "center_center", "label": "中间" },
+                          { "value": "center_bottom", "label": "中下" },
+                          { "value": "right_top", "label": "右上" },
+                          { "value": "right_center", "label": "右中" },
+                          { "value": "right_bottom", "label": "右下" }
+                      ],
+                      "default": "left_bottom",
+                      "label": "文字位置"
+                  },
+                  { "type": "select", "id": "content_position_mb", "options": [
+                          { "value": "center_top", "label": "中上" },
+                          { "value": "center_center", "label": "中间" },
+                          { "value": "center_bottom", "label": "中下" }
+                      ],
+                      "default": "center_bottom",
+                      "label": "文字位置 (手机端)"
+                  },
+                  { "type": "color", "id": "text_color", "label": "文字颜色", "default": "#ffffff" },
+                  { "type": "textarea", "id": "subheading", "label": "小标题" },
+                  { "type": "textarea", "id": "heading", "label": "大标题" },
+                  { "type": "textarea", "id": "content", "label": "内容" },
+                  { "type": "header","content":"按钮"},
+                  { "type": "textarea", "id": "button_label", "label": "按钮文字" },
+                  { "type": "url", "id": "button_link", "label": "按钮链接" },
+                  { "type": "color", "id": "button_bg_color", "label": "按钮背景色", "default": "#FED100" },
+                  { "type": "color", "id": "button_text_color", "label": "按钮文字色", "default": "#141414" },
+                  { "type": "checkbox", "id": "remove_top_padding", "label": "移除上边距", "default": false },
+                  { "type": "checkbox", "id": "remove_bottom_padding", "label": "移除下边距", "default": false },
+                  { "type": "select", "id": "container_width", "label": "容器宽度", "options": [
+                          { "value": "full_width", "label": "全宽" },
+                          { "value": "1440", "label": "1440px" }
+                      ],
+                      "default": "1440"
+                  },
+                  { "type": "color", "id": "background_color", "label": "背景色", "default": "#000000" },
+                  { "type": "text", "id": "custom_class", "label": "自定义class" }
+              ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "多图",
+                "category": "custom"
+            }
+        ]
+    }
+{% endschema %}
+
+
+{% comment %} 样式文件在theme.liquid里引入 {% endcomment %}
+
+{%- liquid
+  assign ratio_mobile = section.settings.ratio_mobile
+  assign ratio_desktop = section.settings.ratio_desktop
+  assign position = section.settings.content_position
+  assign position_mb = section.settings.content_position_mb | default: position
+
+  assign img_mobile = section.settings.image_mobile
+  assign img_desktop = section.settings.image_desktop
+  if img_mobile == blank
+    assign img_mobile = section.settings.image
+  endif
+  if img_desktop == blank
+    assign img_desktop = section.settings.image
+  endif
+  if img_mobile == blank and img_desktop != blank
+    assign img_mobile = img_desktop
+  endif
+  assign img_for_mobile = img_mobile
+  if img_desktop != blank
+    assign img_for_desktop = img_desktop
+  else
+    assign img_for_desktop = img_for_mobile
+  endif
+-%}
+
+{% style %}
+  [data-section-id="{{ section.id }}"] {
+    --cm-one-image-text: {{ section.settings.text_color }};
+    --cm-one-image-button-bg: {{ section.settings.button_bg_color }};
+    --cm-one-image-button-text: {{ section.settings.button_text_color }};
+    background-color: {{ section.settings.background_color }};
+  }
+
+  {% if section.settings.container_width == '1440' %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  {% else %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 100%;
+    }
+  {% endif %}
+
+  [data-section-id="{{ section.id }}"] .cm-one-image__media--mobile {
+    {% if ratio_mobile == 'auto' %}
+      {% if img_for_mobile != blank %}
+        aspect-ratio: {{ img_for_mobile.aspect_ratio }};
+      {% else %}
+        aspect-ratio: auto;
+      {% endif %}
+      height: auto;
+    {% else %}
+      aspect-ratio: {{ ratio_mobile }};
+    {% endif %}
+  }
+  @media screen and (min-width: 750px) {
+    [data-section-id="{{ section.id }}"] .cm-one-image__media--desktop {
+      {% if ratio_desktop == 'auto' %}
+        {% if img_for_desktop != blank %}
+          aspect-ratio: {{ img_for_desktop.aspect_ratio }};
+        {% else %}
+          aspect-ratio: auto;
+        {% endif %}
+        height: auto;
+      {% else %}
+        aspect-ratio: {{ ratio_desktop }};
+      {% endif %}
+    }
+  }
+
+  [data-section-id="{{ section.id }}"] .cm-one-image__overlay {
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity }};
+  }
+{% endstyle %}
+
+<div class="cm-multi-images">
+  {% for block in section.blocks %}
+  <div class="cm-one-image {{ section.settings.custom_class }} {% if section.settings.remove_top_padding %}cm-remove-top-space{% endif %} {% if section.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" data-section-id="{{ section.id }}" {% if section.settings.floor_number != blank %}data-floor-number="{{ section.settings.floor_number }}"{% endif %}>
+    <div class="layout-container">
+      {% if section.settings.section_title != blank or section.settings.section_info != blank %}
+        <div class="heading-box">
+            {% if section.settings.section_title != blank %}
+                <div class="section-title"><h2 class="slide_title-inner">{{ section.settings.section_title }}</h2></div>
+            {% endif %}
+            {% if section.settings.section_info != blank %}
+                <div class="section-info"><p>{{ section.settings.section_info }}</p></div>
+            {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="cm-one-image__wrap">
+        <div class="cm-one-image__media cm-one-image__media--mobile cm-one-image__media--desktop">
+          {%- if section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}"></a>
+          {%- endif -%}
+          
+          {%- if img_for_mobile != blank or img_for_desktop != blank -%}
+            {% liquid
+              if img_for_desktop != blank
+                assign pc_src = img_for_desktop | image_url: width: 1980
+                assign pad_src = img_for_desktop | image_url: width: 1536
+              else
+                assign pc_src = img_for_mobile | image_url: width: 1980
+                assign pad_src = img_for_mobile | image_url: width: 1536
+              endif
+              assign m_src = img_for_mobile | image_url: width: 767
+            %}
+            {% render 'resp-img'
+              pc_src: pc_src,
+              pad_src: pad_src,
+              m_src: m_src,
+              lazy: true, 
+              class_name: 'cm-one-image__picture'
+            %}
+          {%- else -%}
+            <div class="cm-one-image__placeholder">
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+          <span class="cm-one-image__overlay" aria-hidden="true"></span>
+        </div>
+
+        <div class="cm-one-image-content">
+          <div class="cm-one-image-content-inner" data-content-position="{{ position }}" data-content-position-mb="{{ position_mb }}">
+            <div class="cm-one-image-content-container">
+              {%- if section.settings.subheading != blank -%}
+                <div class="cm-slide-sub-title">{{ section.settings.subheading }}</div>
+              {%- endif -%}
+              {%- if section.settings.heading != blank -%}
+                <div class="cm-slide-title"><p class="cm-slide-title-inner">{{ section.settings.heading }}</p></div>
+              {%- endif -%}
+              {%- if section.settings.content != blank -%}
+                <div class="cm-slide-info">{{ section.settings.content }}</div>
+              {%- endif -%}
+              
+              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+                <div class="cm-slide-button" style="--cm-slide-button-color:{{ section.settings.button_text_color }};--cm-slide-button-bg:{{ section.settings.button_bg_color }};">
+                  <a href="{{ section.settings.button_link }}" class="mf-btn"><span>{{ section.settings.button_label }}</span></a>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+
+        {%- if section.settings.section_media_bottom_info != blank -%}
+          <div class="cm-one-image__media-bottom-info">{{ section.settings.section_media_bottom_info | newline_to_br }}</div>
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
