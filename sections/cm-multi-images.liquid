@@ -127,102 +127,104 @@
 
 {% comment %} 样式文件在theme.liquid里引入 {% endcomment %}
 
-{%- liquid
-  assign ratio_mobile = section.settings.ratio_mobile
-  assign ratio_desktop = section.settings.ratio_desktop
-  assign position = section.settings.content_position
-  assign position_mb = section.settings.content_position_mb | default: position
+<div class="cm-multi-images">
+  {% for block in section.blocks %}
 
-  assign img_mobile = section.settings.image_mobile
-  assign img_desktop = section.settings.image_desktop
-  if img_mobile == blank
-    assign img_mobile = section.settings.image
-  endif
-  if img_desktop == blank
-    assign img_desktop = section.settings.image
-  endif
-  if img_mobile == blank and img_desktop != blank
-    assign img_mobile = img_desktop
-  endif
-  assign img_for_mobile = img_mobile
-  if img_desktop != blank
-    assign img_for_desktop = img_desktop
-  else
-    assign img_for_desktop = img_for_mobile
-  endif
--%}
+    
+  {%- liquid
+    assign ratio_mobile = block.settings.ratio_mobile
+    assign ratio_desktop = block.settings.ratio_desktop
+    assign position = block.settings.content_position
+    assign position_mb = block.settings.content_position_mb | default: position
 
-{% style %}
-  [data-section-id="{{ section.id }}"] {
-    --cm-one-image-text: {{ section.settings.text_color }};
-    --cm-one-image-button-bg: {{ section.settings.button_bg_color }};
-    --cm-one-image-button-text: {{ section.settings.button_text_color }};
-    background-color: {{ section.settings.background_color }};
-  }
+    assign img_mobile = block.settings.image_mobile
+    assign img_desktop = block.settings.image_desktop
+    if img_mobile == blank
+      assign img_mobile = block.settings.image
+    endif
+    if img_desktop == blank
+      assign img_desktop = block.settings.image
+    endif
+    if img_mobile == blank and img_desktop != blank
+      assign img_mobile = img_desktop
+    endif
+    assign img_for_mobile = img_mobile
+    if img_desktop != blank
+      assign img_for_desktop = img_desktop
+    else
+      assign img_for_desktop = img_for_mobile
+    endif
+  -%}
 
-  {% if section.settings.container_width == '1440' %}
-    [data-section-id="{{ section.id }}"] .layout-container {
-      max-width: 1440px;
-      margin: 0 auto;
+  {% style %}
+    [data-block-id="{{ block.id }}"] {
+      --cm-one-image-text: {{ block.settings.text_color }};
+      --cm-one-image-button-bg: {{ block.settings.button_bg_color }};
+      --cm-one-image-button-text: {{ block.settings.button_text_color }};
+      background-color: {{ block.settings.background_color }};
     }
-  {% else %}
-    [data-section-id="{{ section.id }}"] .layout-container {
-      max-width: 100%;
-    }
-  {% endif %}
 
-  [data-section-id="{{ section.id }}"] .cm-one-image__media--mobile {
-    {% if ratio_mobile == 'auto' %}
-      {% if img_for_mobile != blank %}
-        aspect-ratio: {{ img_for_mobile.aspect_ratio }};
-      {% else %}
-        aspect-ratio: auto;
-      {% endif %}
-      height: auto;
+    {% if block.settings.container_width == '1440' %}
+      [data-block-id="{{ block.id }}"] .layout-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
     {% else %}
-      aspect-ratio: {{ ratio_mobile }};
+      [data-block-id="{{ block.id }}"] .layout-container {
+        max-width: 100%;
+      }
     {% endif %}
-  }
-  @media screen and (min-width: 750px) {
-    [data-section-id="{{ section.id }}"] .cm-one-image__media--desktop {
-      {% if ratio_desktop == 'auto' %}
-        {% if img_for_desktop != blank %}
-          aspect-ratio: {{ img_for_desktop.aspect_ratio }};
+
+    [data-block-id="{{ block.id }}"] .cm-one-image__media--mobile {
+      {% if ratio_mobile == 'auto' %}
+        {% if img_for_mobile != blank %}
+          aspect-ratio: {{ img_for_mobile.aspect_ratio }};
         {% else %}
           aspect-ratio: auto;
         {% endif %}
         height: auto;
       {% else %}
-        aspect-ratio: {{ ratio_desktop }};
+        aspect-ratio: {{ ratio_mobile }};
       {% endif %}
     }
-  }
+    @media screen and (min-width: 750px) {
+      [data-block-id="{{ block.id }}"] .cm-one-image__media--desktop {
+        {% if ratio_desktop == 'auto' %}
+          {% if img_for_desktop != blank %}
+            aspect-ratio: {{ img_for_desktop.aspect_ratio }};
+          {% else %}
+            aspect-ratio: auto;
+          {% endif %}
+          height: auto;
+        {% else %}
+          aspect-ratio: {{ ratio_desktop }};
+        {% endif %}
+      }
+    }
 
-  [data-section-id="{{ section.id }}"] .cm-one-image__overlay {
-    background-color: {{ section.settings.overlay_color }};
-    opacity: {{ section.settings.overlay_opacity }};
-  }
-{% endstyle %}
-
-<div class="cm-multi-images">
-  {% for block in section.blocks %}
-  <div class="cm-one-image {{ section.settings.custom_class }} {% if section.settings.remove_top_padding %}cm-remove-top-space{% endif %} {% if section.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" data-section-id="{{ section.id }}" {% if section.settings.floor_number != blank %}data-floor-number="{{ section.settings.floor_number }}"{% endif %}>
+    [data-block-id="{{ block.id }}"] .cm-one-image__overlay {
+      background-color: {{ block.settings.overlay_color }};
+      opacity: {{ block.settings.overlay_opacity }};
+    }
+  {% endstyle %}
+  
+  <div class="cm-one-image {{ block.settings.custom_class }} {% if block.settings.remove_top_padding %}cm-remove-top-space{% endif %} {% if block.settings.remove_bottom_padding %}cm-remove-bottom-space{% endif %}" data-block-id="{{ block.id }}" {% if block.settings.floor_number != blank %}data-floor-number="{{ block.settings.floor_number }}"{% endif %}>
     <div class="layout-container">
-      {% if section.settings.section_title != blank or section.settings.section_info != blank %}
+      {% if block.settings.block_title != blank or block.settings.block_info != blank %}
         <div class="heading-box">
-            {% if section.settings.section_title != blank %}
-                <div class="section-title"><h2 class="slide_title-inner">{{ section.settings.section_title }}</h2></div>
+            {% if block.settings.block_title != blank %}
+                <div class="block-title"><h2 class="slide_title-inner">{{ block.settings.block_title }}</h2></div>
             {% endif %}
-            {% if section.settings.section_info != blank %}
-                <div class="section-info"><p>{{ section.settings.section_info }}</p></div>
+            {% if block.settings.block_info != blank %}
+                <div class="block-info"><p>{{ block.settings.block_info }}</p></div>
             {% endif %}
         </div>
       {% endif %}
 
       <div class="cm-one-image__wrap">
         <div class="cm-one-image__media cm-one-image__media--mobile cm-one-image__media--desktop">
-          {%- if section.settings.button_link != blank -%}
-            <a href="{{ section.settings.button_link }}"></a>
+          {%- if block.settings.button_link != blank -%}
+            <a href="{{ block.settings.button_link }}"></a>
           {%- endif -%}
           
           {%- if img_for_mobile != blank or img_for_desktop != blank -%}
@@ -254,27 +256,27 @@
         <div class="cm-one-image-content">
           <div class="cm-one-image-content-inner" data-content-position="{{ position }}" data-content-position-mb="{{ position_mb }}">
             <div class="cm-one-image-content-container">
-              {%- if section.settings.subheading != blank -%}
-                <div class="cm-slide-sub-title">{{ section.settings.subheading }}</div>
+              {%- if block.settings.subheading != blank -%}
+                <div class="cm-slide-sub-title">{{ block.settings.subheading }}</div>
               {%- endif -%}
-              {%- if section.settings.heading != blank -%}
-                <div class="cm-slide-title"><p class="cm-slide-title-inner">{{ section.settings.heading }}</p></div>
+              {%- if block.settings.heading != blank -%}
+                <div class="cm-slide-title"><p class="cm-slide-title-inner">{{ block.settings.heading }}</p></div>
               {%- endif -%}
-              {%- if section.settings.content != blank -%}
-                <div class="cm-slide-info">{{ section.settings.content }}</div>
+              {%- if block.settings.content != blank -%}
+                <div class="cm-slide-info">{{ block.settings.content }}</div>
               {%- endif -%}
               
-              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-                <div class="cm-slide-button" style="--cm-slide-button-color:{{ section.settings.button_text_color }};--cm-slide-button-bg:{{ section.settings.button_bg_color }};">
-                  <a href="{{ section.settings.button_link }}" class="mf-btn"><span>{{ section.settings.button_label }}</span></a>
+              {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                <div class="cm-slide-button" style="--cm-slide-button-color:{{ block.settings.button_text_color }};--cm-slide-button-bg:{{ block.settings.button_bg_color }};">
+                  <a href="{{ block.settings.button_link }}" class="mf-btn"><span>{{ block.settings.button_label }}</span></a>
                 </div>
               {%- endif -%}
             </div>
           </div>
         </div>
 
-        {%- if section.settings.section_media_bottom_info != blank -%}
-          <div class="cm-one-image__media-bottom-info">{{ section.settings.section_media_bottom_info | newline_to_br }}</div>
+        {%- if block.settings.block_media_bottom_info != blank -%}
+          <div class="cm-one-image__media-bottom-info">{{ block.settings.block_media_bottom_info | newline_to_br }}</div>
         {%- endif -%}
 
       </div>
