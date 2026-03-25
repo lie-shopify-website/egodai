@@ -626,7 +626,7 @@
         "button_link": "",
         "button_bg_color": "#fed100",
         "button_text_color": "#141414",
-        "remove_top_padding": true,
+        "remove_top_padding": false,
         "remove_bottom_padding": false,
         "container_width": "1440",
         "background_color": "#000000",
