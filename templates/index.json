@@ -537,6 +537,7 @@
         "product_CKAYDL",
         "product_DLBRfw"
       ],
+      "disabled": true,
       "name": "包装清单",
       "settings": {
         "floor_number": "",
