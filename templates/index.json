@@ -9,138 +9,6 @@
  */
 {
   "sections": {
-    "cm_image_video_carousel_tTMTdC": {
-      "type": "cm-image-video-carousel",
-      "blocks": {
-        "image_BkGYYE": {
-          "type": "image",
-          "settings": {
-            "slide_image": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
-            "slide_image_mb": "shopify://shop_images/ezgif.com-video-to-gif-converter.gif",
-            "slide_video": "shopify://files/videos/探索+怂.mp4",
-            "slide_video_mb": "shopify://files/videos/探索+怂.mp4",
-            "desktop_shadow": true,
-            "content_position": "left_bottom",
-            "content_position_mb": "center_top",
-            "slide_sub_title": "A desktop pet robot that feels alive.",
-            "slide_title": "Cubie",
-            "slide_info": "It walks on your desk, explores, gets bored, and finds its own fun.\nTouch it. Talk to it. It reacts.",
-            "product": "cubie",
-            "slide_button_text": "Secure Super Early Bird pricing",
-            "slide_button_url": "shopify://collections",
-            "slide_button_color": "#7ed957",
-            "slide_button_bg": "#1f1f21"
-          }
-        }
-      },
-      "block_order": [
-        "image_BkGYYE"
-      ],
-      "disabled": true,
-      "name": "图片视频轮播",
-      "settings": {
-        "floor_number": "1",
-        "autoplay": true,
-        "autoplay_interval": 5,
-        "height": 800,
-        "height_mb": 655,
-        "remove_top_padding": false,
-        "remove_bottom_padding": false,
-        "custom_class": ""
-      }
-    },
-    "cm_media_with_text_wy99n6": {
-      "type": "cm-media-with-text",
-      "blocks": {
-        "media_text_ErKhN4": {
-          "type": "media_text",
-          "settings": {
-            "media_type": "image",
-            "image_mobile": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
-            "image_desktop": "shopify://shop_images/ezgif-63ca7c14a7d4532f.webp",
-            "ratio_mobile": "1/1",
-            "ratio_desktop": "1/1",
-            "layout_direction": "image_left",
-            "subheading": "No instructions needed.",
-            "heading": "Touch me. Say something. Watch how I respond.",
-            "content": "It feels like interacting with a small life on your desk.",
-            "button_label": "",
-            "button_link": "",
-            "button_bg_color": "#fed100",
-            "button_text_color": "#141414"
-          }
-        },
-        "media_text_GxCViP": {
-          "type": "media_text",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/ce8f8801f1e8f103a35534a89ba4bcc7.webp",
-            "ratio_mobile": "1/1",
-            "ratio_desktop": "1/1",
-            "layout_direction": "image_right",
-            "subheading": "Cubie doesn’t demand attention.",
-            "heading": "You focus. I’ll do my thing.",
-            "content": "It explores quietly and reacts when you engage.",
-            "button_label": "",
-            "button_link": "",
-            "button_bg_color": "#fed100",
-            "button_text_color": "#141414"
-          }
-        },
-        "media_text_W9gXQm": {
-          "type": "media_text",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/processed_by_imagy_71ab888a-a238-4796-b698-b2420c8c566d.webp",
-            "ratio_mobile": "1/1",
-            "ratio_desktop": "1/1",
-            "layout_direction": "image_left",
-            "subheading": "This is where it becomes yours.",
-            "heading": "Create Your Cubie",
-            "content": "It won’t stay the same.\nYour settings shape its personality.",
-            "button_label": "",
-            "button_link": "",
-            "button_bg_color": "#fed100",
-            "button_text_color": "#141414"
-          }
-        },
-        "media_text_QQHhGy": {
-          "type": "media_text",
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/64f55d64b91d06782b05decdbecc1e60.webp",
-            "ratio_mobile": "16/9",
-            "ratio_desktop": "16/9",
-            "layout_direction": "image_right",
-            "subheading": "",
-            "heading": "",
-            "content": "",
-            "button_label": "",
-            "button_link": "",
-            "button_bg_color": "#fed100",
-            "button_text_color": "#141414"
-          }
-        }
-      },
-      "block_order": [
-        "media_text_ErKhN4",
-        "media_text_GxCViP",
-        "media_text_W9gXQm",
-        "media_text_QQHhGy"
-      ],
-      "disabled": true,
-      "name": "图文混排",
-      "settings": {
-        "floor_number": "",
-        "section_title": "Hi, I’m Cubie.",
-        "section_info": "I live on your desk.\nI move around, explore, and sometimes just chill.Don’t worry — I know where the edge is.",
-        "remove_top_padding": true,
-        "remove_bottom_padding": false,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
     "cm_one_image_EzABeR": {
       "type": "cm-one-image",
       "name": "单图",
@@ -148,8 +16,8 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image_mobile": "shopify://shop_images/home-001_01.png",
-        "image_desktop": "shopify://shop_images/home-001_01.png",
+        "image_mobile": "shopify://shop_images/home-003.png",
+        "image_desktop": "shopify://shop_images/home-mb001.png",
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
         "section_media_bottom_info": "",
@@ -327,6 +195,37 @@
         "custom_class": ""
       }
     },
+    "cm_one_image_9CwrUh": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_mobile": "shopify://shop_images/home-004_02.png",
+        "image_desktop": "shopify://shop_images/home-004_02.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_one_image_EtDQ7W": {
       "type": "cm-one-image",
       "name": "单图",
@@ -409,37 +308,6 @@
         "heading": "",
         "content": "",
         "section_media_bottom_info": "",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#fed100",
-        "button_text_color": "#141414",
-        "remove_top_padding": true,
-        "remove_bottom_padding": false,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
-    "cm_one_image_9CwrUh": {
-      "type": "cm-one-image",
-      "name": "单图",
-      "settings": {
-        "floor_number": "",
-        "section_title": "",
-        "section_info": "",
-        "image_mobile": "shopify://shop_images/home-004_02.png",
-        "image_desktop": "shopify://shop_images/home-004_02.png",
-        "ratio_mobile": "auto",
-        "ratio_desktop": "auto",
-        "section_media_bottom_info": "",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_position": "center_bottom",
-        "content_position_mb": "center_bottom",
-        "text_color": "#ffffff",
-        "subheading": "",
-        "heading": "",
-        "content": "",
         "button_label": "",
         "button_link": "",
         "button_bg_color": "#fed100",
@@ -644,8 +512,6 @@
     }
   },
   "order": [
-    "cm_image_video_carousel_tTMTdC",
-    "cm_media_with_text_wy99n6",
     "cm_one_image_EzABeR",
     "cm_one_video_GWRUFJ",
     "cm_one_image_YGW4iK",
