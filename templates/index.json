@@ -292,7 +292,7 @@
     "cm_one_image_9CwrUh": {
       "type": "cm-one-image",
       "custom_css": [
-        "@media (max-width:768px) {.layout-container {padding: 0 12px;}}"
+        "@media (max-width: 768px) {.layout-container {padding: 0 12px; }}"
       ],
       "name": "单图",
       "settings": {
@@ -405,6 +405,37 @@
         "subheading": "",
         "heading": "",
         "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_video_w6wNaG": {
+      "type": "cm-one-video",
+      "name": "单视频",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "video": "shopify://files/videos/完整视频（去掉主图）.mov",
+        "video_autoplay": true,
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_top",
+        "content_position_mb": "center_center",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "section_media_bottom_info": "",
         "button_label": "",
         "button_link": "",
         "button_bg_color": "#fed100",
@@ -591,6 +622,7 @@
     "cm_one_video_DyqfTJ",
     "cm_one_image_EtDQ7W",
     "cm_one_image_q9Vjjg",
+    "cm_one_video_w6wNaG",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
     "newsletter_mPc7XM"
