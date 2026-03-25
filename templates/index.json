@@ -291,6 +291,9 @@
     },
     "cm_one_image_9CwrUh": {
       "type": "cm-one-image",
+      "custom_css": [
+        "@media (max-width:768px) {.layout-container {padding: 0 12px;}}"
+      ],
       "name": "单图",
       "settings": {
         "floor_number": "",
