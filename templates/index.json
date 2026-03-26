@@ -436,7 +436,7 @@
       "type": "cm-one-image",
       "name": "单图",
       "settings": {
-        "floor_number": "",
+        "floor_number": "14",
         "section_title": "",
         "section_info": "",
         "image_desktop": "shopify://shop_images/home-014_01.png",
