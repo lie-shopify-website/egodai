@@ -439,8 +439,8 @@
         "floor_number": "14",
         "section_title": "",
         "section_info": "",
-        "image_desktop": "shopify://shop_images/home-014_01.png",
-        "image_mobile": "shopify://shop_images/home-mb012.png",
+        "image_desktop": "shopify://shop_images/3678e5f1994766d8acb857e0498047ff.png",
+        "image_mobile": "shopify://shop_images/ba0103ac56d66c9a74bb8197764a80f7.png",
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
         "section_media_bottom_info": "",
@@ -472,7 +472,7 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "video": "shopify://files/videos/ 龙虾ai代理展示.mp4",
+        "video": "shopify://files/videos/9号替换视频.mp4",
         "video_autoplay": true,
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
@@ -722,22 +722,6 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "cm_sticky_buynow_bkTebf": {
-      "type": "cm-sticky-buynow",
-      "disabled": true,
-      "name": "悬浮加购",
-      "settings": {
-        "section_title": "$20.00",
-        "section_info": "$20 Deposit + $180 Remaining = $200 (Save $99, MSRP 299)",
-        "button_label": "Reserve Now",
-        "button_bg_color": "#54f3a5",
-        "button_text_color": "#141414",
-        "product": "cubie",
-        "background_color": "#141414",
-        "container_width": "1440",
-        "custom_class": ""
-      }
     }
   },
   "order": [
@@ -760,7 +744,6 @@
     "cm_one_image_L7hXme",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
-    "newsletter_mPc7XM",
-    "cm_sticky_buynow_bkTebf"
+    "newsletter_mPc7XM"
   ]
 }
