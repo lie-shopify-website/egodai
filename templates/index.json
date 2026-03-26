@@ -654,27 +654,11 @@
             "questions_title": "How will the deposit be deducted?",
             "questions_richtext": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>"
           }
-        },
-        "questions_Jj9qDQ": {
-          "type": "questions",
-          "settings": {
-            "questions_title": "When do you launch?",
-            "questions_richtext": "<p><br/>When do you launch?<br/><br/></p>"
-          }
-        },
-        "questions_tiwMz6": {
-          "type": "questions",
-          "settings": {
-            "questions_title": "Collapsible row",
-            "questions_richtext": "<p><br/>Collapsible row<br/><br/></p>"
-          }
         }
       },
       "block_order": [
         "questions_DT6WTF",
-        "questions_BmCqAi",
-        "questions_Jj9qDQ",
-        "questions_tiwMz6"
+        "questions_BmCqAi"
       ],
       "name": "新版FAQ",
       "settings": {
