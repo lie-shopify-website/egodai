@@ -49,8 +49,8 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image_desktop": "shopify://shop_images/01VIP.png",
-        "image_mobile": "shopify://shop_images/VIP.png",
+        "image_desktop": "shopify://shop_images/3.png",
+        "image_mobile": "shopify://shop_images/VIP_2.png",
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
         "section_media_bottom_info": "",
@@ -82,8 +82,8 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image_desktop": "shopify://shop_images/02.png",
-        "image_mobile": "shopify://shop_images/38d9cfe0b68f1411aec0584489c7e626.png",
+        "image_desktop": "shopify://shop_images/02_1.png",
+        "image_mobile": "shopify://shop_images/2_34a087ba-4f0c-42e0-ae36-232729e1fb17.png",
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
         "section_media_bottom_info": "",
@@ -366,6 +366,39 @@
         "custom_class": ""
       }
     },
+    "cm_one_image_cKRLTq": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_desktop": "shopify://shop_images/home-009.png",
+        "image_mobile": "shopify://shop_images/home-mb009.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "enable_global_buy": false,
+        "product": "",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_one_image_Y7niDC": {
       "type": "cm-one-image",
       "name": "单图",
@@ -403,7 +436,7 @@
       "type": "cm-one-image",
       "name": "单图",
       "settings": {
-        "floor_number": "",
+        "floor_number": "14",
         "section_title": "",
         "section_info": "",
         "image_desktop": "shopify://shop_images/home-014_01.png",
@@ -529,39 +562,6 @@
         "custom_class": ""
       }
     },
-    "cm_one_image_cKRLTq": {
-      "type": "cm-one-image",
-      "name": "单图",
-      "settings": {
-        "floor_number": "",
-        "section_title": "",
-        "section_info": "",
-        "image_desktop": "shopify://shop_images/home-009.png",
-        "image_mobile": "shopify://shop_images/home-mb009.png",
-        "ratio_mobile": "auto",
-        "ratio_desktop": "auto",
-        "section_media_bottom_info": "",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_position": "center_bottom",
-        "content_position_mb": "center_bottom",
-        "text_color": "#ffffff",
-        "subheading": "",
-        "heading": "",
-        "content": "",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#fed100",
-        "button_text_color": "#141414",
-        "enable_global_buy": false,
-        "product": "",
-        "remove_top_padding": true,
-        "remove_bottom_padding": false,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
     "cm_inthebox_bLHfPL": {
       "type": "cm-inthebox",
       "blocks": {
@@ -641,6 +641,13 @@
     "cm_faq_LrhbrU": {
       "type": "cm-faq",
       "blocks": {
+        "questions_TfJNaL": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "How do I receive the VIP price？",
+            "questions_richtext": "<p>You’ll receive a private checkout link by email as soon as Cubie launches on Kickstarter.</p>"
+          }
+        },
         "questions_DT6WTF": {
           "type": "questions",
           "settings": {
@@ -655,26 +662,19 @@
             "questions_richtext": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>"
           }
         },
-        "questions_Jj9qDQ": {
+        "questions_DMQgXB": {
           "type": "questions",
           "settings": {
-            "questions_title": "When do you launch?",
-            "questions_richtext": "<p><br/>When do you launch?<br/><br/></p>"
-          }
-        },
-        "questions_tiwMz6": {
-          "type": "questions",
-          "settings": {
-            "questions_title": "Collapsible row",
-            "questions_richtext": "<p><br/>Collapsible row<br/><br/></p>"
+            "questions_title": "When do you launch？",
+            "questions_richtext": "<p>CUBIE launches globally on Kickstarter on April 15.</p>"
           }
         }
       },
       "block_order": [
+        "questions_TfJNaL",
         "questions_DT6WTF",
         "questions_BmCqAi",
-        "questions_Jj9qDQ",
-        "questions_tiwMz6"
+        "questions_DMQgXB"
       ],
       "name": "新版FAQ",
       "settings": {
@@ -750,12 +750,12 @@
     "cm_one_image_q9Vjjg",
     "cm_one_video_GWRUFJ",
     "cm_one_image_EwbTat",
+    "cm_one_image_cKRLTq",
     "cm_one_image_Y7niDC",
     "cm_one_image_rA4wnt",
     "cm_one_video_DyqfTJ",
     "cm_one_image_jmfNLX",
     "cm_one_image_L7hXme",
-    "cm_one_image_cKRLTq",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
     "newsletter_mPc7XM",

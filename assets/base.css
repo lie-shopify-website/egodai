@@ -3633,9 +3633,6 @@ sticky-header .header>.header__search {
 .header-floor-wrapper .floor-item .floor-item-name:hover {
   color: #fff;
 }
-.header-floor-wrapper .floor-item.open .floor-item-name {
-  color: #fff;
-}
 
 .header-floor-wrapper .hamburger-box-wrapper {
   display: -webkit-box;
@@ -3739,4 +3736,11 @@ sticky-header .header>.header__search {
 /* 锁定 body 滚动 */
 .lock-body {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.js-globalBuynowBtn {
+    cursor: pointer;
 }
