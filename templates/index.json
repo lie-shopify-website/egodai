@@ -141,6 +141,39 @@
         "custom_class": ""
       }
     },
+    "cm_one_image_RdmFw9": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_desktop": "shopify://shop_images/03VIP.png",
+        "image_mobile": "shopify://shop_images/VIP_a71b87f7-93fa-4647-add6-03857c5da3e2.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "enable_global_buy": false,
+        "product": "",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_one_video_ibgBpG": {
       "type": "cm-one-video",
       "name": "单视频",
@@ -795,6 +828,7 @@
     "cm_one_image_YBPdrj",
     "cm_one_image_YGW4iK",
     "cm_one_image_XbJXCG",
+    "cm_one_image_RdmFw9",
     "cm_one_video_ibgBpG",
     "cm_one_image_k6pLEQ",
     "cm_one_video_w6wNaG",
