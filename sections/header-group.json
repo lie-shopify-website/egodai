@@ -57,6 +57,7 @@
       "blocks": {
         "floor_zQXRNw": {
           "type": "floor",
+          "disabled": true,
           "settings": {
             "floor_number": "2",
             "floor_name": "AI Features"
@@ -64,6 +65,7 @@
         },
         "floor_6h9D4D": {
           "type": "floor",
+          "disabled": true,
           "settings": {
             "floor_number": "2",
             "floor_name": "VIP Access"
