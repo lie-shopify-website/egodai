@@ -732,7 +732,7 @@
         "button_label": "Lock My VIP Spot",
         "button_bg_color": "#fed100",
         "button_text_color": "#141414",
-        "product": "",
+        "product": "cubie",
         "background_color": "#000000",
         "container_width": "1440",
         "custom_class": ""
