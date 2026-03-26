@@ -722,6 +722,21 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "cm_sticky_buynow_79EcTe": {
+      "type": "cm-sticky-buynow",
+      "name": "悬浮加购",
+      "settings": {
+        "section_title": "Deposit now, unlock $169 VIP pricing during Kickstarter",
+        "section_info": "MSRP $299 · Save $130",
+        "button_label": "Lock My VIP Spot",
+        "button_bg_color": "#FED100",
+        "button_text_color": "#141414",
+        "product": "",
+        "background_color": "#000000",
+        "container_width": "1440",
+        "custom_class": ""
+      }
     }
   },
   "order": [
@@ -744,6 +759,7 @@
     "cm_one_image_L7hXme",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
-    "newsletter_mPc7XM"
+    "newsletter_mPc7XM",
+    "cm_sticky_buynow_79EcTe"
   ]
 }
