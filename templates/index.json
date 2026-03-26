@@ -641,6 +641,13 @@
     "cm_faq_LrhbrU": {
       "type": "cm-faq",
       "blocks": {
+        "questions_TfJNaL": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "How do I receive the VIP price？",
+            "questions_richtext": "<p>You’ll receive a private checkout link by email as soon as Cubie launches on Kickstarter.</p>"
+          }
+        },
         "questions_DT6WTF": {
           "type": "questions",
           "settings": {
@@ -664,6 +671,7 @@
         }
       },
       "block_order": [
+        "questions_TfJNaL",
         "questions_DT6WTF",
         "questions_BmCqAi",
         "questions_DMQgXB"
