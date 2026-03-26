@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "cm_one_image_EzABeR": {
       "type": "cm-one-image",
@@ -725,6 +725,7 @@
     },
     "cm_sticky_buynow_bkTebf": {
       "type": "cm-sticky-buynow",
+      "disabled": true,
       "name": "悬浮加购",
       "settings": {
         "section_title": "$20.00",
@@ -734,6 +735,7 @@
         "button_text_color": "#141414",
         "product": "cubie",
         "background_color": "#141414",
+        "container_width": "1440",
         "custom_class": ""
       }
     }
