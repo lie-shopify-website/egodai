@@ -24,7 +24,7 @@
         "announcement_my6ctC": {
           "type": "announcement",
           "settings": {
-            "text": "🚀 Cubie launches on Kickstarter · April 15",
+            "text": "🚀 Cubie launches on Kickstarter · March 2026",
             "link": ""
           }
         },
@@ -41,6 +41,7 @@
         "announcement_my6ctC",
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 3,
