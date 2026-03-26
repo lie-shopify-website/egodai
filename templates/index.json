@@ -654,11 +654,19 @@
             "questions_title": "How will the deposit be deducted?",
             "questions_richtext": "<p>Once the Kickstarter campaign goes live, VIP members will receive a private checkout link.<br/><br/>Ordering through this link guarantees access to the $179 early-bird price.</p>"
           }
+        },
+        "questions_DMQgXB": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "When do you launch？",
+            "questions_richtext": "<p>CUBIE launches globally on Kickstarter on April 15.</p>"
+          }
         }
       },
       "block_order": [
         "questions_DT6WTF",
-        "questions_BmCqAi"
+        "questions_BmCqAi",
+        "questions_DMQgXB"
       ],
       "name": "新版FAQ",
       "settings": {
