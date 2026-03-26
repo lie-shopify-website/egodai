@@ -68,7 +68,7 @@
         "button_text_color": "#141414",
         "enable_global_buy": true,
         "product": "cubie",
-        "remove_top_padding": false,
+        "remove_top_padding": true,
         "remove_bottom_padding": false,
         "container_width": "1440",
         "background_color": "#000000",
