@@ -1,0 +1,90 @@
+
+{% schema %}
+    {
+        "name": "悬浮加购",
+        "settings": [
+
+            { "type": "header","content":"标题"},
+            { "type": "textarea", "id": "section_title", "label": "标题" },
+            { "type": "textarea", "id": "section_info", "label": "内容" },
+
+            { "type": "header","content":"按钮"},
+            { "type": "textarea", "id": "button_label", "label": "按钮文字" },
+            { "type": "color", "id": "button_bg_color", "label": "按钮背景色", "default": "#FED100" },
+            { "type": "color", "id": "button_text_color", "label": "按钮文字色", "default": "#141414" },
+
+            { "type": "header","content":"加购设置"},
+            { "type": "product", "id": "product", "label": "产品", "info":"默认就是加购产品第一个变体." },
+
+            { "type": "header","content":"其他"},
+            { "type": "color", "id": "background_color", "label": "背景色", "default": "#000000" },
+            { "type": "select", "id": "container_width", "label": "容器宽度", "options": [
+                    { "value": "full_width", "label": "全宽" },
+                    { "value": "1440", "label": "1440px" }
+                ],
+                "default": "1440"
+            },
+            { "type": "text", "id": "custom_class", "label": "自定义class" }
+        ],
+        "presets": [
+            {
+                "name": "悬浮加购",
+                "category": "custom"
+            }
+        ]
+    }
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+  }
+  [data-section-id="{{ section.id }}"] {
+    --cm-sticky-buynow-button-bg: {{ section.settings.button_bg_color }};
+    --cm-sticky-buynow-button-text: {{ section.settings.button_text_color }};
+    background-color: {{ section.settings.background_color }};
+  }
+  {% if section.settings.container_width == '1440' %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  {% else %}
+    [data-section-id="{{ section.id }}"] .layout-container {
+      max-width: 100%;
+    }
+  {% endif %}
+{% endstyle %}
+
+{{ 'cm-sticky-buynow.css' | asset_url | stylesheet_tag }}
+{% assign curr_product = section.settings.product %}
+{% assign default_variant = curr_product.selected_or_first_available_variant %}
+
+<div class="cm-sticky-buynow {{ section.settings.custom_class }}" data-section-id="{{ section.id }}">
+  <div class="layout-container">
+    <div class="cm-sticky-buynow-inner">
+      {% if section.settings.section_title != blank or section.settings.section_info != blank %}
+        <div class="left-content">
+            {% if section.settings.section_title != blank %}
+                <div class="section-title"><p class="slide_title-inner">{{ section.settings.section_title }}</p></div>
+            {% endif %}
+            {% if section.settings.section_info != blank %}
+                <div class="section-info"><p>{{ section.settings.section_info }}</p></div>
+            {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="right-content">
+        <div class="button-content">
+              {%- if section.settings.button_label != blank -%}
+                <div class="cm-sbn-button {% if curr_product != blank %}js-globalBuynowBtn{% endif %}" {% if curr_product != blank %}data-product-id="{{ curr_product.id }}" data-variant-id="{{ default_variant.id }}"{% endif %}>
+                  <a class="mf-btn"><span>{{ section.settings.button_label }}</span></a>
+                </div>
+              {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "cm_one_image_EzABeR": {
       "type": "cm-one-image",
@@ -722,6 +722,20 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "cm_sticky_buynow_bkTebf": {
+      "type": "cm-sticky-buynow",
+      "name": "悬浮加购",
+      "settings": {
+        "section_title": "$20.00",
+        "section_info": "$20 Deposit + $180 Remaining = $200 (Save $99, MSRP 299)",
+        "button_label": "Reserve Now",
+        "button_bg_color": "#54f3a5",
+        "button_text_color": "#141414",
+        "product": "cubie",
+        "background_color": "#141414",
+        "custom_class": ""
+      }
     }
   },
   "order": [
@@ -744,6 +758,7 @@
     "cm_one_image_cKRLTq",
     "cm_inthebox_bLHfPL",
     "cm_faq_LrhbrU",
-    "newsletter_mPc7XM"
+    "newsletter_mPc7XM",
+    "cm_sticky_buynow_bkTebf"
   ]
 }
