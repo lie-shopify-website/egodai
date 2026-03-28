@@ -39,6 +39,7 @@
             
             { "type": "video", "id": "video", "label": "通用视频（未单独设置手机/电脑时使用）" },
             { "type": "image_picker", "id": "poster_image", "label": "封面图（可选）" },
+            { "type": "image_picker", "id": "placeholder_image", "label": "点击播放占位图（关闭自动播放时可选，不选则用视频封面）" },
             { "type": "checkbox", "id": "video_autoplay", "label": "自动播放", "default": true },
             { "type": "select", "id": "ratio_mobile", "label": "手机端比例", "options": [
                     { "value": "auto", "label": "自动" },
@@ -120,8 +121,6 @@
 {% endschema %}
 
 
-
-{{ 'cm-one-video.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign ratio_mobile = section.settings.ratio_mobile
@@ -224,13 +223,21 @@
           {% liquid
             if video_desktop != blank
               assign video_url = video_desktop.sources[0].url
-              assign video_poster = video_desktop.previewImage.url
+              if video_desktop.preview_image != blank
+                assign video_poster = video_desktop.preview_image | image_url: width: 1920
+              else
+                assign video_poster = ''
+              endif
               if video_desktop.sources[1].url != blank
                 assign video_url = video_desktop.sources[1].url
               endif
             else
               assign video_url = video_mobile.sources[0].url
-              assign video_poster = video_mobile.previewImage.url
+              if video_mobile.preview_image != blank
+                assign video_poster = video_mobile.preview_image | image_url: width: 1920
+              else
+                assign video_poster = ''
+              endif
               if video_mobile.sources[1].url != blank
                 assign video_url = video_mobile.sources[1].url
               endif
@@ -238,13 +245,11 @@
             
             if video_mobile != blank
               assign video_mb_url = video_mobile.sources[0].url
-              assign video_mb_poster = video_mobile.previewImage.url
               if video_mobile.sources[1].url != blank
                 assign video_mb_url = video_mobile.sources[1].url
               endif
             else
               assign video_mb_url = video_url
-              assign video_mb_poster = video_poster
             endif
             
             if section.settings.poster_image != blank
@@ -252,10 +257,17 @@
             else
               assign poster_url = video_poster
             endif
+
+            if section.settings.placeholder_image != blank
+              assign click_placeholder_url = section.settings.placeholder_image | image_url: width: 1920
+            else
+              assign click_placeholder_url = poster_url
+            endif
           %}
+          {% if section.settings.video_autoplay %}
           <mf-video 
             class="cm-one-video__video"
-            {% if section.settings.video_autoplay %}autoplay{% else %}controls{% endif %}
+            autoplay
             muted 
             playsinline
             webkit-playsinline
@@ -266,6 +278,84 @@
             <source src="{{ video_url }}" type="video/mp4" media="(min-width: 768px)" poster="{{ poster_url }}">
             <source src="{{ video_mb_url }}" type="video/mp4" poster="{{ poster_url }}">
           </mf-video>
+          {% else %}
+          <div class="cm-one-video__poster-gate" role="button" tabindex="0" aria-label="播放视频">
+            {% if click_placeholder_url != blank %}
+            <img
+              class="cm-one-video__poster-gate-img"
+              src="{{ click_placeholder_url }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="1920"
+              height="auto"
+            >
+            {% endif %}
+            <span class="cm-one-video__play-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" width="80" height="80">
+                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.45)"/>
+                <path d="M32 26L32 54L56 40L32 26Z" fill="#ffffff"/>
+              </svg>
+            </span>
+          </div>
+          <mf-video
+            class="cm-one-video__video cm-one-video__video--deferred"
+            lazy
+            controls
+            muted
+            playsinline
+            webkit-playsinline
+            loop
+            preload="none"
+            data-poster-for-load="{{ poster_url | escape }}"
+            data-src-hd="{{ video_url | escape }}"
+            data-src-tablet="{{ video_url | escape }}"
+            data-src-mobile="{{ video_mb_url | escape }}"
+          ></mf-video>
+          <script>
+            (function () {
+              var root = document.querySelector('[data-section-id="{{ section.id }}"]');
+              if (!root) return;
+              var gate = root.querySelector('.cm-one-video__poster-gate');
+              var mv = root.querySelector('mf-video.cm-one-video__video--deferred');
+              if (!gate || !mv) return;
+
+              var loaded = false;
+              function injectSourcesAndPlay() {
+                if (loaded) return;
+                loaded = true;
+                var poster = mv.getAttribute('data-poster-for-load') || '';
+                var hd = mv.getAttribute('data-src-hd') || '';
+                var tab = mv.getAttribute('data-src-tablet') || '';
+                var mb = mv.getAttribute('data-src-mobile') || '';
+                function esc(s) {
+                  var d = document.createElement('div');
+                  d.textContent = s;
+                  return d.innerHTML;
+                }
+                mv.setAttribute('autoplay', '');
+                mv.insertAdjacentHTML(
+                  'beforeend',
+                  '<source src="' + esc(hd) + '" type="video/mp4" media="(min-width: 1280px)" poster="' + esc(poster) + '">' +
+                  '<source src="' + esc(tab) + '" type="video/mp4" media="(min-width: 768px)" poster="' + esc(poster) + '">' +
+                  '<source src="' + esc(mb) + '" type="video/mp4" poster="' + esc(poster) + '">'
+                );
+                if (gate.parentNode) gate.remove();
+              }
+
+              gate.addEventListener('click', function (e) {
+                e.preventDefault();
+                injectSourcesAndPlay();
+              });
+              gate.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  injectSourcesAndPlay();
+                }
+              });
+            })();
+          </script>
+          {% endif %}
         {%- else -%}
           <div class="cm-one-video__placeholder">
             {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
