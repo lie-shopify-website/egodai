@@ -42,6 +42,37 @@
         "custom_class": ""
       }
     },
+    "cm_one_video_TrFyVR": {
+      "type": "cm-one-video",
+      "name": "单视频",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "video": "shopify://files/videos/KV05.mp4",
+        "video_autoplay": true,
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_top",
+        "content_position_mb": "center_center",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "section_media_bottom_info": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": false,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_one_image_YBPdrj": {
       "type": "cm-one-image",
       "name": "单图",
@@ -741,6 +772,7 @@
   },
   "order": [
     "cm_one_image_EzABeR",
+    "cm_one_video_TrFyVR",
     "cm_one_image_YBPdrj",
     "cm_one_image_XbJXCG",
     "cm_one_image_RdmFw9",
