@@ -14,38 +14,37 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_MqzJKC": {
-          "type": "announcement",
-          "settings": {
-            "text": "🔒 Limited early access for deposit supporters only",
-            "link": ""
-          }
-        },
         "announcement_my6ctC": {
           "type": "announcement",
           "settings": {
-            "text": "🚀 Cubie launches on Kickstarter · March 2026",
+            "text": "⚠️ 7 Days Left to Secure VIP 🔥",
             "link": ""
           }
         },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "⭐ Deposit users unlock Super Early Bird pricing",
+            "text": "🌟 VIP Saves $130 & $90 Bonus Pack 🌟",
+            "link": ""
+          }
+        },
+        "announcement_MqzJKC": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚀 CUBIE launches on April 2026 💡",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement_MqzJKC",
         "announcement_my6ctC",
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_MqzJKC"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 3,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
