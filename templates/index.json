@@ -157,7 +157,7 @@
         "content": "",
         "button_label": "",
         "button_link": "https://www.youtube.com/watch?v=frLY0lGgDbQ",
-        "button_bg_color": "#FED100",
+        "button_bg_color": "#fed100",
         "button_text_color": "#141414",
         "enable_global_buy": false,
         "product": "",
@@ -259,7 +259,40 @@
         "button_text_color": "#141414",
         "enable_global_buy": false,
         "product": "",
-        "remove_top_padding": false,
+        "remove_top_padding": true,
+        "remove_bottom_padding": true,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
+    "cm_one_image_EwbTat": {
+      "type": "cm-one-image",
+      "name": "单图",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "image_desktop": "shopify://shop_images/b7713b9c8c7dc400b0f762591d6d468b.png",
+        "image_mobile": "shopify://shop_images/94dc95473c5fb2353d27f2c1cfcd9ca3.png",
+        "ratio_mobile": "auto",
+        "ratio_desktop": "auto",
+        "section_media_bottom_info": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "center_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "enable_global_buy": false,
+        "product": "",
+        "remove_top_padding": true,
         "remove_bottom_padding": false,
         "container_width": "1440",
         "background_color": "#000000",
@@ -483,39 +516,6 @@
         "button_link": "",
         "button_bg_color": "#fed100",
         "button_text_color": "#141414",
-        "remove_top_padding": true,
-        "remove_bottom_padding": false,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
-    "cm_one_image_EwbTat": {
-      "type": "cm-one-image",
-      "name": "单图",
-      "settings": {
-        "floor_number": "",
-        "section_title": "",
-        "section_info": "",
-        "image_desktop": "shopify://shop_images/b7713b9c8c7dc400b0f762591d6d468b.png",
-        "image_mobile": "shopify://shop_images/94dc95473c5fb2353d27f2c1cfcd9ca3.png",
-        "ratio_mobile": "auto",
-        "ratio_desktop": "auto",
-        "section_media_bottom_info": "",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_position": "center_bottom",
-        "content_position_mb": "center_bottom",
-        "text_color": "#ffffff",
-        "subheading": "",
-        "heading": "",
-        "content": "",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#fed100",
-        "button_text_color": "#141414",
-        "enable_global_buy": false,
-        "product": "",
         "remove_top_padding": true,
         "remove_bottom_padding": false,
         "container_width": "1440",
@@ -765,6 +765,13 @@
     "cm_faq_LrhbrU": {
       "type": "cm-faq",
       "blocks": {
+        "questions_m8aQ4p": {
+          "type": "questions",
+          "settings": {
+            "questions_title": "How does the VIP reservation work?",
+            "questions_richtext": "<p>Pay $1.99 now to lock in your $169 VIP price. On launch day (April 15), we'll email you an exclusive VIP link to claim your discounted spot. If you change your mind before launch, it's fully refundable.</p>"
+          }
+        },
         "questions_TfJNaL": {
           "type": "questions",
           "settings": {
@@ -795,6 +802,7 @@
         }
       },
       "block_order": [
+        "questions_m8aQ4p",
         "questions_TfJNaL",
         "questions_DT6WTF",
         "questions_BmCqAi",
@@ -872,6 +880,7 @@
     "cm_one_image_YBPdrj",
     "cm_one_image_XbJXCG",
     "cm_one_image_A9TMAV",
+    "cm_one_image_EwbTat",
     "cm_one_image_RtMUyB",
     "cm_one_image_YGW4iK",
     "cm_one_video_ibgBpG",
@@ -879,7 +888,6 @@
     "cm_one_video_w6wNaG",
     "cm_one_image_q9Vjjg",
     "cm_one_video_GWRUFJ",
-    "cm_one_image_EwbTat",
     "cm_one_image_cKRLTq",
     "cm_one_image_rA4wnt",
     "cm_one_video_DyqfTJ",
