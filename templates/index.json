@@ -105,37 +105,6 @@
         "custom_class": ""
       }
     },
-    "cm_one_video_MEAqdJ": {
-      "type": "cm-one-video",
-      "name": "单视频",
-      "settings": {
-        "floor_number": "",
-        "section_title": "",
-        "section_info": "",
-        "video_mobile": "shopify://files/videos/三个视频S2.mp4",
-        "video_autoplay": true,
-        "ratio_mobile": "4/3",
-        "ratio_desktop": "4/3",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_position": "left_bottom",
-        "content_position_mb": "center_bottom",
-        "text_color": "#ffffff",
-        "subheading": "",
-        "heading": "",
-        "content": "",
-        "section_media_bottom_info": "",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#fed100",
-        "button_text_color": "#141414",
-        "remove_top_padding": true,
-        "remove_bottom_padding": true,
-        "container_width": "1440",
-        "background_color": "#000000",
-        "custom_class": ""
-      }
-    },
     "cm_one_image_k6pLEQ": {
       "type": "cm-one-image",
       "name": "单图",
@@ -163,7 +132,7 @@
         "enable_global_buy": false,
         "product": "",
         "remove_top_padding": true,
-        "remove_bottom_padding": false,
+        "remove_bottom_padding": true,
         "container_width": "1440",
         "background_color": "#000000",
         "custom_class": ""
@@ -392,6 +361,37 @@
         "custom_class": ""
       }
     },
+    "cm_one_video_MEAqdJ": {
+      "type": "cm-one-video",
+      "name": "单视频",
+      "settings": {
+        "floor_number": "",
+        "section_title": "",
+        "section_info": "",
+        "video_mobile": "shopify://files/videos/三个视频S2.mp4",
+        "video_autoplay": true,
+        "ratio_mobile": "4/3",
+        "ratio_desktop": "4/3",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "content_position": "left_bottom",
+        "content_position_mb": "center_bottom",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "heading": "",
+        "content": "",
+        "section_media_bottom_info": "",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#fed100",
+        "button_text_color": "#141414",
+        "remove_top_padding": true,
+        "remove_bottom_padding": true,
+        "container_width": "1440",
+        "background_color": "#000000",
+        "custom_class": ""
+      }
+    },
     "cm_one_image_NYaFqL": {
       "type": "cm-one-image",
       "name": "单图",
@@ -399,7 +399,7 @@
         "floor_number": "",
         "section_title": "",
         "section_info": "",
-        "image": "shopify://shop_images/reviewers2.png",
+        "image": "shopify://shop_images/20260408-145416.png",
         "ratio_mobile": "auto",
         "ratio_desktop": "auto",
         "section_media_bottom_info": "",
