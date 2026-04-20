@@ -14,30 +14,22 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_my6ctC": {
-          "type": "announcement",
-          "settings": {
-            "text": "⚠️ 7 Days Left to Secure VIP 🔥",
-            "link": ""
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "🌟 VIP Saves $130 & $90 Bonus Pack 🌟",
+            "text": "🌟 Back Now & Saves $120 🌟",
             "link": ""
           }
         },
         "announcement_MqzJKC": {
           "type": "announcement",
           "settings": {
-            "text": "🚀 CUBIE launches on April 2026 💡",
+            "text": "🚀 CUBIE is Now Live 💡",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement_my6ctC",
         "announcement-bar-0",
         "announcement_MqzJKC"
       ],
