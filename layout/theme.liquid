@@ -39,6 +39,10 @@
     </script>
     {% endif %}
 
+    {% comment %} 访问网站直接跳转到众筹网站, 同时把body display none {% endcomment %}
+    <script>
+      window.location.href = "https://www.kickstarter.com/projects/egodai/cubie-your-imagined-sci-fi-robot-buddy?ref=dsx010";
+    </script>
 
     {% comment %} 公共CSS变量 {% endcomment %}
     <link rel="stylesheet" href="{{ 'common.css' | asset_url }}">
